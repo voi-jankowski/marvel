@@ -4,81 +4,125 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
   </head>
   <body>
-   <div class="container">
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Marvel Fan Page</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- change href to id element-->
-          <li><a href="Search.html">Search</a></li>
-          <li><a href="Favourites.html">Favourites</a></li>
-          <li><a href="Next-Film.html">Next-Film</a></li>
-        </ul>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Marvel Fan Page</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <!-- change href to id element-->
+            <li><a href="Search.html">Search</a></li>
+            <li><a href="Favourites.html">Favourites</a></li>
+            <li><a href="Next-Film.html">Next-Film</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    
-    <div class="row">
-    
-      
-    
-      <div class="col s8">
-        <!-- Grey navigation panel -->
-        <div class="countdown-card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/office.jpg">
+    <br /><br />
+    <!-- Created navbar that is fixed on top and with extended menu on md or lower -->
+    <div class="navbar-fixed">
+      <nav class="nav-extended">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Marvel Fan Page</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="Search.html">Search</a></li>
+              <li><a href="Favourites.html">Favourites</a></li>
+              <li><a href="Next-Film.html">Next-Film</a></li>
+            </ul>
           </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
+        </div>
+      </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="Search.html">Search</a></li>
+      <li><a href="Favourites.html">Favourites</a></li>
+      <li><a href="Next-Film.html">Next-Film</a></li>
+    </ul>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s8">
+          <!-- Grey navigation panel -->
+          <div class="countdown-card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"
+                >Card Title<i class="material-icons right">more_vert</i></span
+              >
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"
+                >Card Title<i class="material-icons right">close</i></span
+              >
+              <p>
+                Here is some more information about this product that is only
+                revealed once clicked on.
+              </p>
+            </div>
           </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+
+        <div class="col s4">
+          <!-- Teal page content  -->
+          <div class="search-card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4"
+                >Card Title<i class="material-icons right">more_vert</i></span
+              >
+              <a class="waves-effect waves-light btn"
+                ><i class="material-icons">search</i> Search
+              </a>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"
+                >Card Title<i class="material-icons right">close</i></span
+              >
+              <p>
+                Here is some more information about this product that is only
+                revealed once clicked on.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="col s4">
-        <!-- Teal page content  -->
-        <div class="search-card">
-
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/office.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-            <a class="waves-effect waves-light btn">button</a>
-            <p><a href="#">This is a link</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div> 
-      </div>
-
     </div>
 
-   </div>
-    
+    <!-- jQuery link for Materialize effects to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
- 
-    
-      
-    
-
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
-  
     <script src="./assets/js/script.js"></script>
+
+    <!-- function to make mobile navbar work. -->
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
   </body>
 </html>
