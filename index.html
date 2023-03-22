@@ -76,32 +76,86 @@
 
         <div class="col m4 12">
           <!-- Teal page content  -->
-          <div class="search-card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="card-image" src="" />
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4"
-                >Card Title<i class="material-icons right">more_vert</i></span
-              >
-              <a class="waves-effect waves-light btn"
-                ><i class="material-icons">search</i> Search
-              </a>
-              <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"
-                >Card Title<i class="material-icons right">close</i></span
-              >
-              <p>
-                Here is some more information about this product that is only
-                revealed once clicked on.
-              </p>
+          <div class="card large search-card">
+            <div class="container">
+              <!-- A card with select option to list the films to search -->
+              <div class="card">
+                <div class="row">
+                  <div class="input-field col s4"></div>
+                  <div class="input-field col s4">
+                    <select searchable="List of options" id="xxxx">
+                      <option value="1">start 1</option>
+                      <option value="2">start 2</option>
+                      <option value="3">end 3</option>
+                      <option value="4">end 4</option>
+                      <option value="5">end 5</option>
+                      <option value="6">go 3</option>
+                    </select>
+                    <label>Select a film</label>
+                    <button
+                      class="btn blue waves-effect waves-light"
+                      onclick="getVAl();"
+                    >
+                      select
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- A card with tiles of recent searches. -->
+              <div class="card">
+                <div class="container recent-searches">
+                  <div class="row">
+                    <div class="col">
+                      <div class="card small">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                      <div class="card small">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                      <div class="card small">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                      <div class="card small">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                      <div class="card small">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Card with tabs for recent searches -->
 
     <!-- jQuery link for Materialize effects to work. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -115,6 +169,27 @@
       $(document).ready(function () {
         $(".dropdown-trigger").dropdown();
       });
+    </script>
+
+    <!--   JavaScript for dropdown search options-->
+    <script>
+      var instances;
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll("select");
+        const options = [
+          { name: "start 1", value: "1" },
+          { name: "start 2", value: "2" },
+          { name: "end 3 ", value: "3 " },
+          { name: "end 4 ", value: "4 " },
+          { name: "end 5 ", value: "5" },
+          { name: "go 6 ", value: "6" },
+        ];
+        instances = M.FormSelect.init(elems, options);
+      });
+      function getVAl() {
+        //console.log(instances[0].getSelectedValues());
+        console.log(document.getElementById("xxxx").value);
+      }
     </script>
   </body>
 </html>
