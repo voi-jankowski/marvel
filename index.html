@@ -31,13 +31,17 @@
     </nav>
 
     <br /><br />
-    <!-- Created navbar that is fixed on top and with extended menu on md or lower -->
+    <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
     <div class="navbar-fixed">
       <nav class="nav-extended">
         <div class="container">
           <div class="nav-wrapper">
             <a href="#" class="brand-logo">Marvel Fan Page</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+
+            <a
+              href="#"
+              data-target="mobile-menu"
+              class="dropdown-trigger hide-on-large-only"
               ><i class="material-icons">menu</i></a
             >
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -50,7 +54,7 @@
       </nav>
     </div>
 
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="dropdown-content" id="mobile-menu">
       <li><a href="Search.html">Search</a></li>
       <li><a href="Favourites.html">Favourites</a></li>
       <li><a href="Next-Film.html">Next-Film</a></li>
@@ -118,10 +122,10 @@
 
     <script src="./assets/js/script.js"></script>
 
-    <!-- function to make mobile navbar work. -->
+    <!-- function to make mobile dropdown navbar work. -->
     <script>
       $(document).ready(function () {
-        $(".sidenav").sidenav();
+        $(".dropdown-trigger").dropdown();
       });
     </script>
   </body>
