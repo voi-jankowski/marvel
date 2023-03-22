@@ -17,6 +17,8 @@
 
 .search-tile {
   width: 100px;
+  margin: auto;
+    margin-bottom: 15px;
 }
 
 .search-box label {
@@ -29,3 +31,6 @@
     width: 90%;
   }
 }
+ .tiles-card {
+    box-shadow: none;
+ }
