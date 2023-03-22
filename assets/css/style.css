@@ -18,3 +18,8 @@
 .search-tile {
   width: 100px;
 }
+
+.search-box label {
+  font-size: 16px;
+  color: black;
+}
