@@ -1,0 +1,13 @@
+.card.large {
+  height: 800px;
+}
+.card img {
+  /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
+  height: 500px;
+  /* // NO MATTER WHAT IMAGE HEIGHT IT WILL SCALE WELL WITHIN THE HEIGHT */
+  object-fit: fill;
+}
+.card card-content {
+  max-height: 40%;
+  overflow: auto;
+}
