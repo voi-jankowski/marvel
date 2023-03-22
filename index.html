@@ -16,34 +16,20 @@
     <title>Document</title>
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Marvel Fan Page</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <!-- change href to id element-->
-            <li><a href="Search.html">Search</a></li>
-            <li><a href="Favourites.html">Favourites</a></li>
-            <li><a href="Next-Film.html">Next-Film</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <br /><br />
     <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
     <div class="navbar-fixed">
       <nav class="nav-extended">
         <div class="container">
           <div class="nav-wrapper">
             <a href="#" class="brand-logo">Marvel Fan Page</a>
-
+            <!-- Menu icon only appearing on mobiles and tablets. -->
             <a
               href="#"
               data-target="mobile-menu"
               class="dropdown-trigger hide-on-large-only"
               ><i class="material-icons">menu</i></a
             >
+            <!-- Nav bar to the right only appearing of larger screens. -->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="Search.html">Search</a></li>
               <li><a href="Favourites.html">Favourites</a></li>
@@ -53,7 +39,7 @@
         </div>
       </nav>
     </div>
-
+    <!-- dropdown nav menu -->
     <ul class="dropdown-content" id="mobile-menu">
       <li><a href="Search.html">Search</a></li>
       <li><a href="Favourites.html">Favourites</a></li>
@@ -62,7 +48,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col s8">
+        <div class="col m8 s12">
           <!-- Grey navigation panel -->
           <div class="countdown-card">
             <div class="card-image waves-effect waves-block waves-light">
@@ -86,7 +72,7 @@
           </div>
         </div>
 
-        <div class="col s4">
+        <div class="col m4 12">
           <!-- Teal page content  -->
           <div class="search-card">
             <div class="card-image waves-effect waves-block waves-light">
