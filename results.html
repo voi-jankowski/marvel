@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
+    <div class="navbar-fixed">
+      <nav class="nav-extended">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Marvel Fan Page</a>
+            <!-- Menu icon only appearing on mobiles and tablets. -->
+            <a
+              href="#"
+              data-target="mobile-menu"
+              class="dropdown-trigger hide-on-large-only"
+              ><i class="material-icons">menu</i></a
+            >
+            <!-- Nav bar to the right only appearing of larger screens. -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="Search.html">Search</a></li>
+              <li><a href="Favourites.html">Favourites</a></li>
+              <li><a href="Next-Film.html">Next-Film</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- dropdown nav menu -->
+    <ul class="dropdown-content" id="mobile-menu">
+      <li><a href="Search.html">Search</a></li>
+      <li><a href="Favourites.html">Favourites</a></li>
+      <li><a href="Next-Film.html">Next-Film</a></li>
+    </ul>
+
+    <div class="container">
+      <div class="card result-card">
+        <div class="card-image">
+          <img src="./assets/images/placeholder.jpg" alt="" />
+        </div>
+        <div class="card-content">
+          <ul class="collection with-header">
+            <li class="collection-header"><h4>Film Title</h4></li>
+            <li class="collection-item">Release Date</li>
+            <li class="collection-item">Synopsis</li>
+            <li class="collection-item">Related Titles</li>
+            <a href="#!" class="collection-item">Link</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery link for Materialize effects to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
