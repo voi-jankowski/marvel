@@ -31,9 +31,9 @@
             >
             <!-- Nav bar to the right only appearing of larger screens. -->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="Search.html">Search</a></li>
-              <li><a href="Favourites.html">Favourites</a></li>
-              <li><a href="Next-Film.html">Next-Film</a></li>
+              <li><a href="#Search">Search</a></li>
+              <li><a href="#Favourites">Favourites</a></li>
+              <li><a href="#Next-Film">Next-Film</a></li>
             </ul>
           </div>
         </div>
@@ -41,16 +41,16 @@
     </div>
     <!-- dropdown nav menu -->
     <ul class="dropdown-content" id="mobile-menu">
-      <li><a href="Search.html">Search</a></li>
-      <li><a href="Favourites.html">Favourites</a></li>
-      <li><a href="Next-Film.html">Next-Film</a></li>
+      <li><a href="#Search">Search</a></li>
+      <li><a href="#Favourites">Favourites</a></li>
+      <li><a href="#Next-Film">Next-Film</a></li>
     </ul>
 
     <div class="container">
       <div class="row">
         <div class="col l8 s12">
           <!-- Grey navigation panel -->
-          <div class="card red countdown-card">
+          <div id="Next-Film" class="card red countdown-card">
             <div class="card-image waves-effect waves-block waves-light">
               <!-- Carousel of images for posters of new films coming up -->
               <div class="carousel carousel-slider">
@@ -95,6 +95,7 @@
               <!-- A card with select option to list the films to search -->
               <!-- Sourced at https://codepen.io/yassinevic/pen/eXjqjb -->
               <div class="card search-box">
+
                 <div class="container">
                   <div class="row">
                     <div class="input-field col 12"></div>
@@ -107,7 +108,7 @@
                         <option value="5">end 5</option>
                         <option value="6">go 3</option>
                       </select>
-                      <label>Select a film</label>
+                      <label id="Search">Select a film</label>
                       <br>
                       <button
                         class="btn blue waves-effect waves-light"
@@ -121,7 +122,7 @@
                 
               </div>
               <!-- A card with tiles of recent searches. -->
-              <div class="card tiles-card">
+              <div id="Favourites" class="card tiles-card">
                 <div class="container resent-searches">
                   <div class="row">
                     <div class="col l6 m4 s6">
