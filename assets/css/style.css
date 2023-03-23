@@ -10,27 +10,36 @@
   overflow: hidden;
 }
 
+/* Setting the standard size of the search-tiles and filling them completely with an image */
 .search-tile img {
   height: 100px;
   max-height: 100%;
 }
-
 .search-tile {
   width: 100px;
   margin: auto;
   margin-bottom: 20px;
 }
 
+/* STYLING OF THE SEARCH-BOX */
 .search-box label {
   font-size: 16px;
   color: black;
 }
 
+.input-field {
+  width: 100%;
+}
+
+.tiles-card {
+  box-shadow: none;
+}
+
+/* MEDIA QUERIES */
+
 @media only screen and (min-width: 993px) {
+  /* Changing the container's width for large screens. */
   .container {
     width: 90%;
   }
-}
-.tiles-card {
-  box-shadow: none;
 }

@@ -80,26 +80,30 @@
             <!-- <div class="container"> -->
               <!-- A card with select option to list the films to search -->
               <div class="card search-box">
-                <div class="row">
-                  <div class="input-field col 6"></div>
-                  <div class="input-field col 6">
-                    <select searchable="List of options" id="xxxx">
-                      <option value="1">start 1</option>
-                      <option value="2">start 2</option>
-                      <option value="3">end 3</option>
-                      <option value="4">end 4</option>
-                      <option value="5">end 5</option>
-                      <option value="6">go 3</option>
-                    </select>
-                    <label>Select a film</label>
-                    <button
-                      class="btn blue waves-effect waves-light"
-                      onclick="getVAl();"
-                    >
-                      search
-                    </button>
+                <div class="container">
+                  <div class="row">
+                    <div class="input-field col 12"></div>
+                    <div class="input-field col 12">
+                      <select searchable="List of options" id="xxxx">
+                        <option value="1">start 1</option>
+                        <option value="2">start 2</option>
+                        <option value="3">end 3</option>
+                        <option value="4">end 4</option>
+                        <option value="5">end 5</option>
+                        <option value="6">go 3</option>
+                      </select>
+                      <label>Select a film</label>
+                      <br>
+                      <button
+                        class="btn blue waves-effect waves-light"
+                        onclick="getVAl();"
+                      >
+                        search
+                      </button>
+                    </div>
                   </div>
                 </div>
+                
               </div>
               <!-- A card with tiles of recent searches. -->
               <div class="card tiles-card">
@@ -208,5 +212,6 @@
         console.log(document.getElementById("xxxx").value);
       }
     </script>
+   
   </body>
 </html>
