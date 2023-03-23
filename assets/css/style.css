@@ -1,7 +1,6 @@
 .card img {
   /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
   height: 500px;
-  max-height: 80%;
   /* // NO MATTER WHAT IMAGE HEIGHT IT WILL SCALE WELL WITHIN THE HEIGHT */
   object-fit: fill;
 }
@@ -33,6 +32,13 @@
 
 .tiles-card {
   box-shadow: none;
+}
+
+/* Adjusting carousel images */
+
+.carousel img {
+    height: 500px;
+    object-fit: fill;
 }
 
 /* MEDIA QUERIES */

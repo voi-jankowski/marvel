@@ -52,7 +52,21 @@
           <!-- Grey navigation panel -->
           <div class="card red countdown-card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="card-image" src="./assets/images/placeholder.jpg" />
+              <!-- Carousel of images for posters of new films coming up -->
+              <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#two!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#three!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#four!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+              </div>
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4"
@@ -178,6 +192,8 @@
       </div>
     </div>
 
+    
+
     <!-- jQuery link for Materialize effects to work. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -211,6 +227,15 @@
         //console.log(instances[0].getSelectedValues());
         console.log(document.getElementById("xxxx").value);
       }
+    </script>
+
+    <!-- Add function for the carousel -->
+    <script>
+        $(document).ready(function(){
+          $('.carousel').carousel({
+            indicators: true,
+          });
+        });
     </script>
    
   </body>
