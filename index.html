@@ -52,7 +52,21 @@
           <!-- Grey navigation panel -->
           <div id="Next-Film" class="card red countdown-card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="card-image" src="./assets/images/placeholder.jpg" />
+              <!-- Carousel of images for posters of new films coming up -->
+              <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#two!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#three!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+                <a class="carousel-item" href="#four!">
+                  <img src="./assets/images/placeholder.jpg" alt="">
+                </a>
+              </div>
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4"
@@ -79,66 +93,39 @@
           <div class="card search-card">
             <!-- <div class="container"> -->
               <!-- A card with select option to list the films to search -->
+              <!-- Sourced at https://codepen.io/yassinevic/pen/eXjqjb -->
               <div class="card search-box">
-                <div class="row">
-                  <div class="input-field col 6"></div>
-                  <div class="input-field col 6">
-                    <select searchable="List of options" id="xxxx">
-                      <option value="1">start 1</option>
-                      <option value="2">start 2</option>
-                      <option value="3">end 3</option>
-                      <option value="4">end 4</option>
-                      <option value="5">end 5</option>
-                      <option value="6">go 3</option>
-                    </select>
-                    <label id="Search">Select a film</label>
-                    <button             
-                      class="btn blue waves-effect waves-light"
-                      onclick="getVAl();"
-                    >
-                      search
-                    </button>
+
+                <div class="container">
+                  <div class="row">
+                    <div class="input-field col 12"></div>
+                    <div class="input-field col 12">
+                      <select searchable="List of options" id="xxxx">
+                        <option value="1">start 1</option>
+                        <option value="2">start 2</option>
+                        <option value="3">end 3</option>
+                        <option value="4">end 4</option>
+                        <option value="5">end 5</option>
+                        <option value="6">go 3</option>
+                      </select>
+                      <label id="Search">Select a film</label>
+                      <br>
+                      <button
+                        class="btn blue waves-effect waves-light"
+                        onclick="getVAl();"
+                      >
+                        search
+                      </button>
+                    </div>
                   </div>
                 </div>
+                
               </div>
               <!-- A card with tiles of recent searches. -->
-              <div id="Favourites" class="card">
-                <div class="container recent-searches">
+              <div id="Favourites" class="card tiles-card">
+                <div class="container resent-searches">
                   <div class="row">
-                    <div class="col">
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                    
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
+                    <div class="col l6 m4 s6">
                       <div class="card search-tile">
                         <div class="card-image">
                           <a href="#"
@@ -148,6 +135,56 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col l6 m4 s6">
+                      <div class="card search-tile">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col l6 m4 s6">
+                      <div class="card search-tile">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col l6 m4 s6">
+                      <div class="card search-tile">
+                        <div class="card-image">
+                          <a href="#"
+                            ><img src="./assets/images/placeholder.jpg" alt=""
+                          /></a>
+                          <span class="card-title">Film Title</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col l6 m4 s6">
+                        <div class="card search-tile">
+                          <div class="card-image">
+                            <a href="#"
+                              ><img src="./assets/images/placeholder.jpg" alt=""
+                            /></a>
+                            <span class="card-title">Film Title</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col l6 m4 s6">
+                        <div class="card search-tile">
+                          <div class="card-image">
+                            <a href="#"
+                              ><img src="./assets/images/placeholder.jpg" alt=""
+                            /></a>
+                            <span class="card-title">Film Title</span>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                 </div>
               </div>
@@ -157,11 +194,13 @@
       </div>
     </div>
 
+    
+
     <!-- jQuery link for Materialize effects to work. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="./assets/js/dropdown.js"></script>
     <script src="./assets/js/script.js"></script>
 
     <!-- function to make mobile dropdown navbar work. -->
@@ -191,5 +230,15 @@
         console.log(document.getElementById("xxxx").value);
       }
     </script>
+
+    <!-- Add function for the carousel -->
+    <script>
+        $(document).ready(function(){
+          $('.carousel').carousel({
+            indicators: true,
+          });
+        });
+    </script>
+   
   </body>
 </html>
