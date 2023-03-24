@@ -100,13 +100,63 @@
                   <div class="row">
                     <div class="input-field col 12"></div>
                     <div class="input-field col 12">
-                      <select searchable="List of options" id="xxxx">
-                        <option value="1">start 1</option>
-                        <option value="2">start 2</option>
-                        <option value="3">end 3</option>
-                        <option value="4">end 4</option>
-                        <option value="5">end 5</option>
-                        <option value="6">go 3</option>
+                      <select searchable="List of options" id="movie-title">
+                        <option value="Ant-Man">Ant-Man</option>
+                        <option value="Ant-Man and the Wasp">Ant-Man and the Wasp</option>
+                        <option value="Ant-Man and the Wasp: Quantumania">Ant-Man and the Wasp: Quantumania</option>
+                        <option value="Avengers: Age of Ultron">Avengers: Age of Ultron</option>
+                        <option value="Avengers: Infinity War">Avengers: Infinity War</option>
+                        <option value="Avengers: Endgame">Avengers: Endgame</option>
+                        <option value="Avengers: The Kang Dynasty">Avengers: The Kang Dynasty</option>
+                        <option value="Avengers: Secret Wars">Avengers: Secret Wars</option>
+                        <option value="Black Panther">Black Panther</option>
+                        <option value="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</option>
+                        <option value="Black Widow">Black Widow</option>
+                        <option value="Blade">Blade</option>
+                        <option value="Blade 2">Blade 2</option>
+                        <option value="Captain America: Civil War">Captain America: Civil War</option>
+                        <option value="Captain America: The First Avenger">Captain America: The First Avenger</option>
+                        <option value="Captain America: The Winter Soldier">Captain America: The Winter Soldier</option>
+                        <option value="Captain America: New World Order">Captain America: New World Order</option>
+                        <option value="Captain Marvel">Captain Marvel</option>
+                        <option value="Dark Phoenix">Dark Phoenix</option>
+                        <option value="Deadpool">Deadpool</option>
+                        <option value="Deadpool 2">Deadpool 2</option>
+                        <option value="Deadpool 3">Deadpool 3</option>
+                        <option value="Doctor Strange">Doctor Strange</option>
+                        <option value="Doctor Strange in the Multiverse of Madness">Doctor Strange in the Multiverse of Madness</option>
+                        <option value="Eternals">Eternals</option>
+                        <option value="Fantastic Four">Fantastic Four</option>
+                        <option value="Guardians of the Galaxy">Guardians of the Galaxy</option>
+                        <option value="Guardians of the Galaxy Vol. 2">Guardians of the Galaxy Vol. 2</option>
+                        <option value="Guardians of the Galaxy Vol. 3">Guardians of the Galaxy Vol. 3</option>
+                        <option value="Iron Man">Iron Man</option>
+                        <option value="Iron Man 2">Iron Man 2</option>
+                        <option value="Iron Man 3">Iron Man 3</option>
+                        <option value="Logan">Logan</option>
+                        <option value="Shang-Chi and the Legend of the Ten Rings">Shang-Chi and the Legend of the Ten Rings</option>
+                        <option value="Spider-Man">Spider-Man</option>
+                        <option value="Spider-Man 2">Spider-Man 2</option>
+                        <option value="Spider-Man: Homecoming">Spider-Man: Homecoming</option>
+                        <option value="Spider-Man: Far From Home">Spider-Man: Far From Home</option>
+                        <option value="Spider-Man: No Way Home">Spider-Man: No Way Home</option>
+                        <option value="The Avengers">The Avengers</option>
+                        <option value="The Incredible Hulk">The Incredible Hulk</option>
+                        <option value="The Marvels">The Marvels</option>
+                        <option value="The New Mutants">The New Mutants</option>
+                        <option value="Thor">Thor</option>
+                        <option value="Thor: Ragnarok">Thor: Ragnarok</option>
+                        <option value="Thor: The Dark World">Thor: The Dark World</option>
+                        <option value="Thor: Love and Thunder">Thor: Love and Thunder</option>
+                        <option value="Thunderbolts">Thunderbolts</option>
+                        <option value="The Wolverine">The Wolverine</option>
+                        <option value="X-Men">X-Men</option>
+                        <option value="X2">X2</option>
+                        <option value="X-Men: The Last Stand">X-Men: The Last Stand</option>
+                        <option value="X-Men Origins: Wolverine">X-Men Origins: Wolverine</option>
+                        <option value="X-Men: First Class">X-Men: First Class</option>
+                        <option value="X-Men: Days of Future Past">X-Men: Days of Future Past</option>
+                        <option value="X-Men: Apocalypse">X-Men: Apocalypse</option>
                       </select>
                       <label id="Search">Select a film</label>
                       <br>
@@ -202,43 +252,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/dropdown.js"></script>
     <script src="./assets/js/script.js"></script>
-
-    <!-- function to make mobile dropdown navbar work. -->
-    <script>
-      $(document).ready(function () {
-        $(".dropdown-trigger").dropdown();
-      });
-    </script>
-
-    <!--   JavaScript for dropdown search options-->
-    <script>
-      var instances;
-      document.addEventListener("DOMContentLoaded", function () {
-        var elems = document.querySelectorAll("select");
-        const options = [
-          { name: "start 1", value: "1" },
-          { name: "start 2", value: "2" },
-          { name: "end 3 ", value: "3 " },
-          { name: "end 4 ", value: "4 " },
-          { name: "end 5 ", value: "5" },
-          { name: "go 6 ", value: "6" },
-        ];
-        instances = M.FormSelect.init(elems, options);
-      });
-      function getVAl() {
-        //console.log(instances[0].getSelectedValues());
-        console.log(document.getElementById("xxxx").value);
-      }
-    </script>
-
-    <!-- Add function for the carousel -->
-    <script>
-        $(document).ready(function(){
-          $('.carousel').carousel({
-            indicators: true,
-          });
-        });
-    </script>
-   
   </body>
 </html>
