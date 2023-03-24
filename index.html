@@ -100,7 +100,7 @@
                   <div class="row">
                     <div class="input-field col 12"></div>
                     <div class="input-field col 12">
-                      <select searchable="List of options" id="xxxx">
+                      <select searchable="List of options" id="movie-title">
                         <option value="Ant-Man">Ant-Man</option>
                         <option value="Ant-Man and the Wasp">Ant-Man and the Wasp</option>
                         <option value="Ant-Man and the Wasp: Quantumania">Ant-Man and the Wasp: Quantumania</option>
@@ -147,7 +147,7 @@
                         <option value="Thor">Thor</option>
                         <option value="Thor: Ragnarok">Thor: Ragnarok</option>
                         <option value="Thor: The Dark World">Thor: The Dark World</option>
-                        <option value="Thor: Love and Thunder"></option>
+                        <option value="Thor: Love and Thunder">Thor: Love and Thunder</option>
                         <option value="Thunderbolts">Thunderbolts</option>
                         <option value="The Wolverine">The Wolverine</option>
                         <option value="X-Men">X-Men</option>
@@ -326,8 +326,8 @@
         instances = M.FormSelect.init(elems, options);
       });
       function getVAl() {
-        //console.log(instances[0].getSelectedValues());
-        console.log(document.getElementById("xxxx").value);
+        // console.log(instances[0].getSelectedValues());
+        console.log(document.getElementById("movie-title").value);
       }
     </script>
 
