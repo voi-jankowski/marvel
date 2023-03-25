@@ -168,14 +168,35 @@ function getApi(expression) {
             title: data.title,
             image: data.image,
           };
-          
-          var savedSearch =
-            JSON.parse(localStorage.getItem("savedSearch")) || [];
-          savedSearch.push(newSearch);
-          localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
 
-          mainPageEl.css("display","none")
-          resultPageEl.css("display","block")
+          var savedSearch = JSON.parse(localStorage.getItem("savedSearch")) || [];
+
+
+          if (savedSearch.length < 6) {
+            // Check if title already exist
+            if (savedSearch.some(savedSearch => savedSearch.title === newSearch.title)) {
+              // Get the index number of the object if title already exists
+              var arrayIndex = savedSearch.findIndex(savedSearch => savedSearch.title === newSearch.title);
+              // Remove the old object 
+              savedSearch.splice(arrayIndex, 1);
+              // Push updated object with updated value
+              savetoLocal();
+            } else {
+              savetoLocal();
+            }
+          } else {
+            savedSearch.splice(0, 1);
+            savetoLocal();
+          }
+
+
+          function savetoLocal() {
+            savedSearch.push(newSearch);
+            localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
+          }
+
+          mainPageEl.css("display", "none")
+          resultPageEl.css("display", "block")
         });
     });
 }
@@ -221,3 +242,10 @@ window.onload = function () {
     recentSearchesEL.append(status);
   }
 };
+
+recentSearchesEL.on("click", function (event) {
+  event.preventDefault();
+  var cardTitle = $(event.target).text();
+  console.log(cardTitle);
+  getApi(cardTitle);
+})
