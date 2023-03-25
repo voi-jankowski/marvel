@@ -162,27 +162,41 @@
             <div class="container resent-searches">
               <h5>Recent Searches</h5>
               <div id="recent-searches" class="row">
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
 
   <div id="result-page" class="container">
     <div class="card result-card">
       <h5 id="result-title"></h5>
-      <p><span id="result-year"></span> | <span id="result-rating"></span> | <span id="result-runtime"></span></p>
+      <p><span id="result-year"></span> · <span id="result-rating"></span> · <span id="result-runtime"></span></p>
       <div class="row card-image">
         <img id="result-image" class="col l4 s12" alt="" />
         <div class="video-container responsive-video">
           <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
-      <p><strong>Plot: </strong><span id="result-plot"></span></p>
-      <p><strong>Directors: </strong><span id="result-directors"></span></p>
-      <p><strong>Stars: </strong><span id="result-stars"></span></p>
+      <table class="striped">
+        <tr>
+          <tbody>
+            <td><strong>Plot: </strong></td>
+            <td><span id="result-plot"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Directors: </strong></td>
+          <td><span id="result-directors"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Stars: </strong></td>
+          <td><span id="result-stars"></span></td>
+        </tr>
+        </tbody>
+
+      </table>
     </div>
   </div>
 
