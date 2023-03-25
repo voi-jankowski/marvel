@@ -104,8 +104,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // GLOBAL VARIABLES
-var searchButton = $("button");
-var resultContainer = $(".container");
+var mainPageEl = $("#main-page");
+var resultPageEl = $("#result-page");
+var recentSearchesEL = $("#recent-searches");
+var resultTitle = $("#result-title");
+var resultYear = $("#result-year");
+var resultRating = $("#result-rating");
+var resultRuntime = $("#result-runtime");
+var resultImage = $("#result-image");
+var resultTrailer = $("#result-trailer");
+var resultPlot = $("#result-plot");
+var resultDirectors = $("#result-directors");
+var resultStars = $("#result-stars");
+
 const apiKey = "k_42i4oflg";
 
 function getApi(expression) {
@@ -135,30 +146,43 @@ function getApi(expression) {
         .then(function (data) {
           console.log(data);
           console.log(data.title);
+          resultTitle.text(data.title);
           console.log(data.year);
+          resultYear.text(data.year);
           console.log(data.contentRating);
+          resultRating.text(data.contentRating);
           console.log(data.runtimeStr);
+          resultRuntime.text(data.runtimeStr);
           console.log(data.image);
+          resultImage.attr("src", (data.image));
           console.log(data.trailer.linkEmbed);
+          resultTrailer.attr("src", (data.trailer.linkEmbed));
           console.log(data.plot);
+          resultPlot.text(data.plot);
           console.log(data.directors);
+          resultDirectors.text(data.directors);
           console.log(data.stars);
+          resultStars.text(data.stars);
 
           var newSearch = {
             title: data.title,
             image: data.image,
           };
-
+          
           var savedSearch =
             JSON.parse(localStorage.getItem("savedSearch")) || [];
           savedSearch.push(newSearch);
           localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
+
+          mainPageEl.css("display","none")
+          resultPageEl.css("display","block")
         });
     });
 }
 
 function getVAl() {
   // console.log(instances[0].getSelectedValues());
+  // window.location.href = 'results.html';
   console.log(document.getElementById("movie-title").value);
   expression = $("#movie-title").val();
   console.log(expression);
@@ -170,10 +194,30 @@ window.onload = function () {
   var savedSearch = JSON.parse(window.localStorage.getItem("savedSearch"));
   if (savedSearch !== null) {
     for (var i = 0; i < savedSearch.length; i++) {
-      var title = savedSearch[i].title;
-      var image = savedSearch[i].image;
+      var savedTitle = savedSearch[i].title;
+      var savedImage = savedSearch[i].image;
+      var div1 = $('<div>');
+      div1.addClass("col l6 m4 s6")
+      var div2 = $('<div>');
+      div2.addClass("card search-tile")
+      var div3 = $('<div>');
+      div3.addClass("card-image")
+      var image = $('<img>');
+      image.addClass("poster");
+      image.attr("src", savedImage);
+      var title = $('<p>');
+      title.addClass("card-title");
+      title.text(savedTitle);
+
+      div3.append(image);
+      div3.append(title);
+      div2.append(div3);
+      div1.append(div2);
+      recentSearchesEL.append(div1);
     }
+  } else {
+    var status = $('<p>');
+    status.text("No recent searches")
+    recentSearchesEL.append(status);
   }
 };
-
-// document.addEventListener("click", getApi);
