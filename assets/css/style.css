@@ -1,3 +1,10 @@
+:root {
+  --dark: rgb(59, 83, 96);
+  --peach: rgb(245, 206, 190);
+  --coral: rgb(255, 107, 107);
+  --grey: rgb(204, 209, 228);
+}
+
 
 .card img {
   /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
@@ -12,9 +19,27 @@
 
 /* Setting the standard size of the search-tiles and filling them completely with an image */
 .search-tile img {
-  height: 100px;
+  height: 15%;
   max-height: 100%;
 }
+
+.card-title {
+  visibility: hidden;
+}
+
+.card-image:hover .card-title {
+  visibility: visible;
+  opacity: 1;
+  font-size: inherit;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--coral);
+}
+
+.card-image:hover .poster {
+  opacity: 0.25;
+}
+
 .search-tile {
   width: 100px;
   margin: auto;
@@ -40,6 +65,14 @@
 .carousel img {
     height: 500px;
     object-fit: fill;
+}
+
+#result-page {
+  display: none;
+}
+
+.video-container {
+  padding-bottom: 40%;
 }
 
 /* MEDIA QUERIES */

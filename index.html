@@ -1,256 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
-    <div class="navbar-fixed">
-      <nav class="nav-extended">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Marvel Fan Page</a>
-            <!-- Menu icon only appearing on mobiles and tablets. -->
-            <a
-              href="#"
-              data-target="mobile-menu"
-              class="dropdown-trigger hide-on-large-only"
-              ><i class="material-icons">menu</i></a
-            >
-            <!-- Nav bar to the right only appearing of larger screens. -->
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="#Search">Search</a></li>
-              <li><a href="#Favourites">Favourites</a></li>
-              <li><a href="#Next-Film">Next-Film</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <!-- dropdown nav menu -->
-    <ul class="dropdown-content" id="mobile-menu">
-      <li><a href="#Search">Search</a></li>
-      <li><a href="#Favourites">Favourites</a></li>
-      <li><a href="#Next-Film">Next-Film</a></li>
-    </ul>
 
-    <div class="container">
-      <div class="row">
-        <div class="col l8 s12">
-          <!-- Grey navigation panel -->
-          <div id="Next-Film" class="card red countdown-card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <!-- Carousel of images for posters of new films coming up -->
-              <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!">
-                  <img src="./assets/images/placeholder.jpg" alt="">
-                </a>
-                <a class="carousel-item" href="#two!">
-                  <img src="./assets/images/placeholder.jpg" alt="">
-                </a>
-                <a class="carousel-item" href="#three!">
-                  <img src="./assets/images/placeholder.jpg" alt="">
-                </a>
-                <a class="carousel-item" href="#four!">
-                  <img src="./assets/images/placeholder.jpg" alt="">
-                </a>
-              </div>
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4"
-                >Card Title<i class="material-icons right">more_vert</i></span
-              >
-              <a class="btn blue waves-effect waves-light" href="#"
-                >This is a link</a
-              >
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"
-                >Card Title<i class="material-icons right">close</i></span
-              >
-              <p>
-                Here is some more information about this product that is only
-                revealed once clicked on.
-              </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
+  <div class="navbar-fixed">
+    <nav class="nav-extended">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">Marvel Fan Page</a>
+          <!-- Menu icon only appearing on mobiles and tablets. -->
+          <a href="#" data-target="mobile-menu" class="dropdown-trigger hide-on-large-only"><i
+              class="material-icons">menu</i></a>
+          <!-- Nav bar to the right only appearing of larger screens. -->
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#Search">Search</a></li>
+            <li><a href="#Favourites">Favourites</a></li>
+            <li><a href="#Next-Film">Next-Film</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- dropdown nav menu -->
+  <ul class="dropdown-content" id="mobile-menu">
+    <li><a href="#Search">Search</a></li>
+    <li><a href="#Favourites">Favourites</a></li>
+    <li><a href="#Next-Film">Next-Film</a></li>
+  </ul>
+
+  <div id="main-page" class="container">
+    <div class="row">
+      <div class="col l8 s12">
+        <!-- Grey navigation panel -->
+        <div id="Next-Film" class="card red countdown-card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <!-- Carousel of images for posters of new films coming up -->
+            <div class="carousel carousel-slider">
+              <a class="carousel-item" href="#one!">
+                <img src="./assets/images/placeholder.jpg" alt="">
+              </a>
+              <a class="carousel-item" href="#two!">
+                <img src="./assets/images/placeholder.jpg" alt="">
+              </a>
+              <a class="carousel-item" href="#three!">
+                <img src="./assets/images/placeholder.jpg" alt="">
+              </a>
+              <a class="carousel-item" href="#four!">
+                <img src="./assets/images/placeholder.jpg" alt="">
+              </a>
             </div>
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                class="material-icons right">more_vert</i></span>
+            <a class="btn blue waves-effect waves-light" href="#">This is a link</a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>
+              Here is some more information about this product that is only
+              revealed once clicked on.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="col l4 s12">
-          <!-- Teal page content  -->
-          <div class="card search-card">
-            <!-- <div class="container"> -->
-              <!-- A card with select option to list the films to search -->
-              <!-- Sourced at https://codepen.io/yassinevic/pen/eXjqjb -->
-              <div class="card search-box">
+      <div class="col l4 s12">
+        <!-- Teal page content  -->
+        <div class="card search-card">
+          <!-- <div class="container"> -->
+          <!-- A card with select option to list the films to search -->
+          <!-- Sourced at https://codepen.io/yassinevic/pen/eXjqjb -->
+          <div class="card search-box">
 
-                <div class="container">
-                  <div class="row">
-                    <div class="input-field col 12"></div>
-                    <div class="input-field col 12">
-                      <select searchable="List of options" id="movie-title">
-                        <option value="Ant-Man">Ant-Man</option>
-                        <option value="Ant-Man and the Wasp">Ant-Man and the Wasp</option>
-                        <option value="Ant-Man and the Wasp: Quantumania">Ant-Man and the Wasp: Quantumania</option>
-                        <option value="Avengers: Age of Ultron">Avengers: Age of Ultron</option>
-                        <option value="Avengers: Infinity War">Avengers: Infinity War</option>
-                        <option value="Avengers: Endgame">Avengers: Endgame</option>
-                        <option value="Avengers: The Kang Dynasty">Avengers: The Kang Dynasty</option>
-                        <option value="Avengers: Secret Wars">Avengers: Secret Wars</option>
-                        <option value="Black Panther">Black Panther</option>
-                        <option value="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</option>
-                        <option value="Black Widow">Black Widow</option>
-                        <option value="Blade">Blade</option>
-                        <option value="Blade 2">Blade 2</option>
-                        <option value="Captain America: Civil War">Captain America: Civil War</option>
-                        <option value="Captain America: The First Avenger">Captain America: The First Avenger</option>
-                        <option value="Captain America: The Winter Soldier">Captain America: The Winter Soldier</option>
-                        <option value="Captain America: New World Order">Captain America: New World Order</option>
-                        <option value="Captain Marvel">Captain Marvel</option>
-                        <option value="Dark Phoenix">Dark Phoenix</option>
-                        <option value="Deadpool">Deadpool</option>
-                        <option value="Deadpool 2">Deadpool 2</option>
-                        <option value="Deadpool 3">Deadpool 3</option>
-                        <option value="Doctor Strange">Doctor Strange</option>
-                        <option value="Doctor Strange in the Multiverse of Madness">Doctor Strange in the Multiverse of Madness</option>
-                        <option value="Eternals">Eternals</option>
-                        <option value="Fantastic Four">Fantastic Four</option>
-                        <option value="Guardians of the Galaxy">Guardians of the Galaxy</option>
-                        <option value="Guardians of the Galaxy Vol. 2">Guardians of the Galaxy Vol. 2</option>
-                        <option value="Guardians of the Galaxy Vol. 3">Guardians of the Galaxy Vol. 3</option>
-                        <option value="Iron Man">Iron Man</option>
-                        <option value="Iron Man 2">Iron Man 2</option>
-                        <option value="Iron Man 3">Iron Man 3</option>
-                        <option value="Logan">Logan</option>
-                        <option value="Shang-Chi and the Legend of the Ten Rings">Shang-Chi and the Legend of the Ten Rings</option>
-                        <option value="Spider-Man">Spider-Man</option>
-                        <option value="Spider-Man 2">Spider-Man 2</option>
-                        <option value="Spider-Man: Homecoming">Spider-Man: Homecoming</option>
-                        <option value="Spider-Man: Far From Home">Spider-Man: Far From Home</option>
-                        <option value="Spider-Man: No Way Home">Spider-Man: No Way Home</option>
-                        <option value="The Avengers">The Avengers</option>
-                        <option value="The Incredible Hulk">The Incredible Hulk</option>
-                        <option value="The Marvels">The Marvels</option>
-                        <option value="The New Mutants">The New Mutants</option>
-                        <option value="Thor">Thor</option>
-                        <option value="Thor: Ragnarok">Thor: Ragnarok</option>
-                        <option value="Thor: The Dark World">Thor: The Dark World</option>
-                        <option value="Thor: Love and Thunder">Thor: Love and Thunder</option>
-                        <option value="Thunderbolts">Thunderbolts</option>
-                        <option value="The Wolverine">The Wolverine</option>
-                        <option value="X-Men">X-Men</option>
-                        <option value="X2">X2</option>
-                        <option value="X-Men: The Last Stand">X-Men: The Last Stand</option>
-                        <option value="X-Men Origins: Wolverine">X-Men Origins: Wolverine</option>
-                        <option value="X-Men: First Class">X-Men: First Class</option>
-                        <option value="X-Men: Days of Future Past">X-Men: Days of Future Past</option>
-                        <option value="X-Men: Apocalypse">X-Men: Apocalypse</option>
-                      </select>
-                      <label id="Search">Select a film</label>
-                      <br>
-                      <button
-                        class="btn blue waves-effect waves-light"
-                        onclick="getVAl();"
-                      >
-                        search
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <!-- A card with tiles of recent searches. -->
-              <div id="Favourites" class="card tiles-card">
-                <div class="container resent-searches">
-                  <div class="row">
-                    <div class="col l6 m4 s6">
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col l6 m4 s6">
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col l6 m4 s6">
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col l6 m4 s6">
-                      <div class="card search-tile">
-                        <div class="card-image">
-                          <a href="#"
-                            ><img src="./assets/images/placeholder.jpg" alt=""
-                          /></a>
-                          <span class="card-title">Film Title</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col l6 m4 s6">
-                        <div class="card search-tile">
-                          <div class="card-image">
-                            <a href="#"
-                              ><img src="./assets/images/placeholder.jpg" alt=""
-                            /></a>
-                            <span class="card-title">Film Title</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col l6 m4 s6">
-                        <div class="card search-tile">
-                          <div class="card-image">
-                            <a href="#"
-                              ><img src="./assets/images/placeholder.jpg" alt=""
-                            /></a>
-                            <span class="card-title">Film Title</span>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+            <div class="container">
+              <div class="row">
+                <div class="input-field col 12"></div>
+                <div class="input-field col 12">
+                  <select searchable="List of options" id="movie-title">
+                    <option value="Ant-Man">Ant-Man</option>
+                    <option value="Ant-Man and the Wasp">Ant-Man and the Wasp</option>
+                    <option value="Ant-Man and the Wasp: Quantumania">Ant-Man and the Wasp: Quantumania</option>
+                    <option value="Avengers: Age of Ultron">Avengers: Age of Ultron</option>
+                    <option value="Avengers: Infinity War">Avengers: Infinity War</option>
+                    <option value="Avengers: Endgame">Avengers: Endgame</option>
+                    <option value="Avengers: The Kang Dynasty">Avengers: The Kang Dynasty</option>
+                    <option value="Avengers: Secret Wars">Avengers: Secret Wars</option>
+                    <option value="Black Panther">Black Panther</option>
+                    <option value="Black Panther: Wakanda Forever">Black Panther: Wakanda Forever</option>
+                    <option value="Black Widow">Black Widow</option>
+                    <option value="Blade">Blade</option>
+                    <option value="Blade 2">Blade 2</option>
+                    <option value="Captain America: Civil War">Captain America: Civil War</option>
+                    <option value="Captain America: The First Avenger">Captain America: The First Avenger</option>
+                    <option value="Captain America: The Winter Soldier">Captain America: The Winter Soldier</option>
+                    <option value="Captain America: New World Order">Captain America: New World Order</option>
+                    <option value="Captain Marvel">Captain Marvel</option>
+                    <option value="Dark Phoenix">Dark Phoenix</option>
+                    <option value="Deadpool">Deadpool</option>
+                    <option value="Deadpool 2">Deadpool 2</option>
+                    <option value="Deadpool 3">Deadpool 3</option>
+                    <option value="Doctor Strange">Doctor Strange</option>
+                    <option value="Doctor Strange in the Multiverse of Madness">Doctor Strange in the Multiverse of
+                      Madness</option>
+                    <option value="Eternals">Eternals</option>
+                    <option value="Fantastic Four">Fantastic Four</option>
+                    <option value="Guardians of the Galaxy">Guardians of the Galaxy</option>
+                    <option value="Guardians of the Galaxy Vol. 2">Guardians of the Galaxy Vol. 2</option>
+                    <option value="Guardians of the Galaxy Vol. 3">Guardians of the Galaxy Vol. 3</option>
+                    <option value="Iron Man">Iron Man</option>
+                    <option value="Iron Man 2">Iron Man 2</option>
+                    <option value="Iron Man 3">Iron Man 3</option>
+                    <option value="Logan">Logan</option>
+                    <option value="Shang-Chi and the Legend of the Ten Rings">Shang-Chi and the Legend of the Ten Rings
+                    </option>
+                    <option value="Spider-Man">Spider-Man</option>
+                    <option value="Spider-Man 2">Spider-Man 2</option>
+                    <option value="Spider-Man: Homecoming">Spider-Man: Homecoming</option>
+                    <option value="Spider-Man: Far From Home">Spider-Man: Far From Home</option>
+                    <option value="Spider-Man: No Way Home">Spider-Man: No Way Home</option>
+                    <option value="The Avengers">The Avengers</option>
+                    <option value="The Incredible Hulk">The Incredible Hulk</option>
+                    <option value="The Marvels">The Marvels</option>
+                    <option value="The New Mutants">The New Mutants</option>
+                    <option value="Thor">Thor</option>
+                    <option value="Thor: Ragnarok">Thor: Ragnarok</option>
+                    <option value="Thor: The Dark World">Thor: The Dark World</option>
+                    <option value="Thor: Love and Thunder">Thor: Love and Thunder</option>
+                    <option value="Thunderbolts">Thunderbolts</option>
+                    <option value="The Wolverine">The Wolverine</option>
+                    <option value="X-Men">X-Men</option>
+                    <option value="X2">X2</option>
+                    <option value="X-Men: The Last Stand">X-Men: The Last Stand</option>
+                    <option value="X-Men Origins: Wolverine">X-Men Origins: Wolverine</option>
+                    <option value="X-Men: First Class">X-Men: First Class</option>
+                    <option value="X-Men: Days of Future Past">X-Men: Days of Future Past</option>
+                    <option value="X-Men: Apocalypse">X-Men: Apocalypse</option>
+                  </select>
+                  <label id="Search">Select a film</label>
+                  <br>
+                  <button class="btn blue waves-effect waves-light" onclick="getVAl();">
+                    search
+                  </button>
                 </div>
               </div>
+            </div>
+
+          </div>
+          <!-- A card with tiles of recent searches. -->
+          <div id="Favourites" class="card tiles-card">
+            <div class="container resent-searches">
+              <h5>Recent Searches</h5>
+              <div id="recent-searches" class="row">
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
-    
+  <div id="result-page" class="container">
+    <div class="card result-card">
+      <h5 id="result-title"></h5>
+      <p><span id="result-year"></span> | <span id="result-rating"></span> | <span id="result-runtime"></span></p>
+      <div class="row card-image">
+        <img id="result-image" class="col l4 s12" alt="" />
+        <div class="video-container responsive-video">
+          <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <p><strong>Plot: </strong><span id="result-plot"></span></p>
+      <p><strong>Directors: </strong><span id="result-directors"></span></p>
+      <p><strong>Stars: </strong><span id="result-stars"></span></p>
+    </div>
+  </div>
 
-    <!-- jQuery link for Materialize effects to work. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/dropdown.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+
+
+  <!-- jQuery link for Materialize effects to work. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/dropdown.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
