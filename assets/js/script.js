@@ -207,6 +207,13 @@ function getApi(expression) {
 }
 
 // When the result page is being displayed pressing the nav bar links takes you back to those elements being displayed and hides the result page.
+var link = document.querySelectorAll("a");
+for (var j = 0; j < link.length; j++) {
+  link[j].addEventListener("click", function (event) {
+    mainPageEl.css("display", "block");
+    resultPageEl.css("display", "none");
+  });
+}
 
 function getVAl() {
   // console.log(instances[0].getSelectedValues());
