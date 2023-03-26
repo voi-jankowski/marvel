@@ -83,11 +83,25 @@ body li a {
 }
 
 /* Adjusting carousel images */
+.carousel {
+    background-color: var(--coral);
+    color: var(--dark);
+    min-height: 750px;
+}
 
 .carousel img {
-    height: 500px;
+    height: 100%;
     object-fit: fill;
 }
+.carousel-item h4 {
+    position:absolute;
+    top: 80px;
+    color: white;
+    font-size: 150%;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
 
 #result-page {
   display: none;
