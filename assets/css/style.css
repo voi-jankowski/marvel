@@ -3,8 +3,29 @@
   --peach: rgb(245, 206, 190);
   --coral: rgb(255, 107, 107);
   --grey: rgb(204, 209, 228);
+  --marvelites: #F9D8C8;
 }
 
+nav {
+  background-color: var(--marvelites);
+}
+
+body li a { 
+  color: var(--dark);
+}
+
+.material-icons {
+  color: var(--dark);
+}
+
+.img{
+  height: 60px;
+  width: auto;
+}
+
+.card-content {
+  background-color: var(--marvelites);
+}
 
 .card img {
   /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
@@ -25,10 +46,6 @@
 
 .card-title {
   visibility: hidden;
-}
-
-.card-image:hover {
-  cursor: pointer;
 }
 
 .card-image:hover .card-title {
@@ -78,7 +95,6 @@
 .video-container {
   padding-bottom: 40%;
 }
-
 
 /* MEDIA QUERIES */
 
