@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="(Ex. Hulk, Iron Man, Spider-Man, etc...)" id="first_name" type="text"
+                        class="validate">
+                    <label for="hero_name">Marvel Comics Character Seach</label>
+                    <button class="btn blue waves-effect waves-light" onclick="getHero();">
+                        search
+                      </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="hero-result-page" class="container">
+        <h4>Character</h4>
+        <div class="card result-card">
+            <div class="row card-image">
+                <img id="hero-image" class="col l6 s12" alt="" />
+                <div id="hero-character" class="col l6 s12">
+                    <h5 id="hero-name"></h5>
+                    <p id="hero-description"></p>
+                    <p>
+                        Comics: <span id="hero-comics"></span>
+                        | Series: <span id="hero-series"></span>
+                        | Stories: <span id="hero-stories"></span>
+                        | Events: <span id="hero-events"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h4>Comics</h4>
+        <div id="comics-result">
+            <div id="comics-items" class="row">
+            </div>
+        </div>
+    </div>
+    <!-- jQuery link for Materialize effects to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/marvelapi.js"></script>
+</body>
+
+</html>

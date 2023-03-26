@@ -42,6 +42,7 @@
 
 .card-image:hover .poster {
   opacity: 0.25;
+  transform: scale(1.2);
 }
 
 .search-tile {
@@ -77,6 +78,10 @@
 
 .video-container {
   padding-bottom: 40%;
+}
+
+/* #hero-result-page {
+  display: none;
 }
 
 
