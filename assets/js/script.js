@@ -154,9 +154,9 @@ function getApi(expression) {
           console.log(data.runtimeStr);
           resultRuntime.text(data.runtimeStr);
           console.log(data.image);
-          resultImage.attr("src", (data.image));
+          resultImage.attr("src", data.image);
           console.log(data.trailer.linkEmbed);
-          resultTrailer.attr("src", (data.trailer.linkEmbed));
+          resultTrailer.attr("src", data.trailer.linkEmbed);
           console.log(data.plot);
           resultPlot.text(data.plot);
           console.log(data.directors);
@@ -169,15 +169,21 @@ function getApi(expression) {
             image: data.image,
           };
 
-          var savedSearch = JSON.parse(localStorage.getItem("savedSearch")) || [];
-
+          var savedSearch =
+            JSON.parse(localStorage.getItem("savedSearch")) || [];
 
           if (savedSearch.length < 6) {
             // Check if title already exist
-            if (savedSearch.some(savedSearch => savedSearch.title === newSearch.title)) {
+            if (
+              savedSearch.some(
+                (savedSearch) => savedSearch.title === newSearch.title
+              )
+            ) {
               // Get the index number of the object if title already exists
-              var arrayIndex = savedSearch.findIndex(savedSearch => savedSearch.title === newSearch.title);
-              // Remove the old object 
+              var arrayIndex = savedSearch.findIndex(
+                (savedSearch) => savedSearch.title === newSearch.title
+              );
+              // Remove the old object
               savedSearch.splice(arrayIndex, 1);
               // Push updated object with updated value
               savetoLocal();
@@ -189,17 +195,18 @@ function getApi(expression) {
             savetoLocal();
           }
 
-
           function savetoLocal() {
             savedSearch.push(newSearch);
             localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
           }
 
-          mainPageEl.css("display", "none")
-          resultPageEl.css("display", "block")
+          mainPageEl.css("display", "none");
+          resultPageEl.css("display", "block");
         });
     });
 }
+
+// When the result page is being displayed pressing the nav bar links takes you back to those elements being displayed and hides the result page.
 
 function getVAl() {
   // console.log(instances[0].getSelectedValues());
@@ -217,16 +224,16 @@ window.onload = function () {
     for (var i = 0; i < savedSearch.length; i++) {
       var savedTitle = savedSearch[i].title;
       var savedImage = savedSearch[i].image;
-      var div1 = $('<div>');
-      div1.addClass("col l6 m4 s6")
-      var div2 = $('<div>');
-      div2.addClass("card search-tile")
-      var div3 = $('<div>');
-      div3.addClass("card-image")
-      var image = $('<img>');
+      var div1 = $("<div>");
+      div1.addClass("col l6 m4 s6");
+      var div2 = $("<div>");
+      div2.addClass("card search-tile");
+      var div3 = $("<div>");
+      div3.addClass("card-image");
+      var image = $("<img>");
       image.addClass("poster");
       image.attr("src", savedImage);
-      var title = $('<p>');
+      var title = $("<p>");
       title.addClass("card-title");
       title.text(savedTitle);
 
@@ -237,8 +244,8 @@ window.onload = function () {
       recentSearchesEL.append(div1);
     }
   } else {
-    var status = $('<p>');
-    status.text("No recent searches")
+    var status = $("<p>");
+    status.text("No recent searches");
     recentSearchesEL.append(status);
   }
 };
@@ -248,4 +255,4 @@ recentSearchesEL.on("click", function (event) {
   var cardTitle = $(event.target).text();
   console.log(cardTitle);
   getApi(cardTitle);
-})
+});
