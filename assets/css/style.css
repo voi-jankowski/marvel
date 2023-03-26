@@ -59,6 +59,7 @@ body li a {
 
 .card-image:hover .poster {
   opacity: 0.25;
+  transform: scale(1.2);
 }
 
 .search-tile {
@@ -94,6 +95,10 @@ body li a {
 
 .video-container {
   padding-bottom: 40%;
+}
+
+/* #hero-result-page {
+  display: none;
 }
 
 /* MEDIA QUERIES */
