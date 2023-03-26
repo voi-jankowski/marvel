@@ -5,6 +5,83 @@ $(document).ready(function () {
   });
 });
 
+//global variables for carousel
+var movieContent = document.querySelector(".card-content");
+var carouselItem = document.querySelector(".carousel-item");
+//moviedb API
+var APIKey = "k_42i4oflg";
+
+// Movie countdown carousel
+// Checking release date of movie is in the future
+function isDateInFuture(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  return date.getTime() > now.getTime();
+}
+
+function getMovies(futureMovieArray) {
+  var APIURL =
+    "https://api.themoviedb.org/3/list/140624?api_key=d9c490609e2985e864fc511399c550ca&language=en-US";
+  fetch(APIURL)
+    .then(function (repsonse) {
+      return repsonse.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+      let counter = 0;
+      for (var i = 0; i < data.items.length && counter < 8; i++) {
+        if (isDateInFuture(data.items[i].release_date + "T12:00:00.000Z")) {
+          var title = document.querySelector(".title" + (counter + 1));
+          var timerHeading = document.querySelector(".timer" + (counter + 1));
+          var countDownImage = document.querySelector(".image" + (counter + 1));
+          var countDownTimer = new Date(data.items[i].release_date);
+
+          // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the difference between now and the count down date
+          var timeUntilNextRelease = countDownTimer - now;
+
+          var days = Math.floor(timeUntilNextRelease / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (timeUntilNextRelease % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor(
+            (timeUntilNextRelease % (1000 * 60 * 60)) / (1000 * 60)
+          );
+
+          var seconds = Math.floor((timeUntilNextRelease % (1000 * 60)) / 1000);
+
+          //Timer
+          timerHeading.textContent =
+            "Next Marvel Film Release: " +
+            days +
+            "d " +
+            hours +
+            "h " +
+            minutes +
+            "m " +
+            seconds +
+            "s ";
+          // to do - resolve set interval erroes and get time to update
+          console.log(timerHeading);
+          //Title
+          title.textContent = "Title: " + data.items[i].original_title;
+          //Image
+          countDownImage.setAttribute(
+            "src",
+            "https://image.tmdb.org/t/p/w500" + data.items[i].poster_path
+          );
+
+          counter++;
+        }
+      }
+    });
+}
+
+getMovies();
+
 // function to make mobile dropdown navbar work.
 
 $(document).ready(function () {
@@ -154,9 +231,9 @@ function getApi(expression) {
           console.log(data.runtimeStr);
           resultRuntime.text(data.runtimeStr);
           console.log(data.image);
-          resultImage.attr("src", (data.image));
+          resultImage.attr("src", data.image);
           console.log(data.trailer.linkEmbed);
-          resultTrailer.attr("src", (data.trailer.linkEmbed));
+          resultTrailer.attr("src", data.trailer.linkEmbed);
           console.log(data.plot);
           resultPlot.text(data.plot);
           console.log(data.directors);
@@ -169,15 +246,21 @@ function getApi(expression) {
             image: data.image,
           };
 
-          var savedSearch = JSON.parse(localStorage.getItem("savedSearch")) || [];
-
+          var savedSearch =
+            JSON.parse(localStorage.getItem("savedSearch")) || [];
 
           if (savedSearch.length < 6) {
             // Check if title already exist
-            if (savedSearch.some(savedSearch => savedSearch.title === newSearch.title)) {
+            if (
+              savedSearch.some(
+                (savedSearch) => savedSearch.title === newSearch.title
+              )
+            ) {
               // Get the index number of the object if title already exists
-              var arrayIndex = savedSearch.findIndex(savedSearch => savedSearch.title === newSearch.title);
-              // Remove the old object 
+              var arrayIndex = savedSearch.findIndex(
+                (savedSearch) => savedSearch.title === newSearch.title
+              );
+              // Remove the old object
               savedSearch.splice(arrayIndex, 1);
               // Push updated object with updated value
               savetoLocal();
@@ -189,14 +272,13 @@ function getApi(expression) {
             savetoLocal();
           }
 
-
           function savetoLocal() {
             savedSearch.push(newSearch);
             localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
           }
 
-          mainPageEl.css("display", "none")
-          resultPageEl.css("display", "block")
+          mainPageEl.css("display", "none");
+          resultPageEl.css("display", "block");
         });
     });
 }
@@ -217,16 +299,16 @@ window.onload = function () {
     for (var i = 0; i < savedSearch.length; i++) {
       var savedTitle = savedSearch[i].title;
       var savedImage = savedSearch[i].image;
-      var div1 = $('<div>');
-      div1.addClass("col l6 m4 s6")
-      var div2 = $('<div>');
-      div2.addClass("card search-tile")
-      var div3 = $('<div>');
-      div3.addClass("card-image")
-      var image = $('<img>');
+      var div1 = $("<div>");
+      div1.addClass("col l6 m4 s6");
+      var div2 = $("<div>");
+      div2.addClass("card search-tile");
+      var div3 = $("<div>");
+      div3.addClass("card-image");
+      var image = $("<img>");
       image.addClass("poster");
       image.attr("src", savedImage);
-      var title = $('<p>');
+      var title = $("<p>");
       title.addClass("card-title");
       title.text(savedTitle);
 
@@ -237,8 +319,8 @@ window.onload = function () {
       recentSearchesEL.append(div1);
     }
   } else {
-    var status = $('<p>');
-    status.text("No recent searches")
+    var status = $("<p>");
+    status.text("No recent searches");
     recentSearchesEL.append(status);
   }
 };
@@ -248,4 +330,4 @@ recentSearchesEL.on("click", function (event) {
   var cardTitle = $(event.target).text();
   console.log(cardTitle);
   getApi(cardTitle);
-})
+});

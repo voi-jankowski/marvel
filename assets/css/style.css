@@ -5,10 +5,29 @@
   --grey: rgb(204, 209, 228);
 }
 
+.carousel {
+    background-color: var(--grey);
+    color: var(--dark);
+    min-height: 750px;
+}
+/* Adjusting carousel images */
+
+.carousel img {
+    height: 100%;
+    object-fit: fill;
+}
+.carousel-item h4 {
+    position:absolute;
+    top: 80px;
+    color: white;
+    font-size: 150%;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+}
 
 .card img {
   /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
-  height: 500px;
+  /* need to comment this out to fix image inside carousel, however need to investigate the effect this has to search function height: 500px; /*
   /* // NO MATTER WHAT IMAGE HEIGHT IT WILL SCALE WELL WITHIN THE HEIGHT */
   object-fit: fill;
 }
@@ -64,12 +83,6 @@
   box-shadow: none;
 }
 
-/* Adjusting carousel images */
-
-.carousel img {
-    height: 500px;
-    object-fit: fill;
-}
 
 #result-page {
   display: none;
