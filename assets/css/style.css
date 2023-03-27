@@ -91,7 +91,7 @@ body li a {
 
 .carousel img {
     height: 100%;
-    object-fit: fill;
+    object-fit:contain
 }
 .carousel-item h4 {
     position:absolute;

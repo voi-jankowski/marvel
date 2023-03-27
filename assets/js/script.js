@@ -55,12 +55,18 @@ function getMovies(futureMovieArray) {
           // to do - resolve set interval erroes and get time to update
           console.log(timerHeading);
           //Title
-          title.textContent = "Title: " + data.items[i].original_title;
+          title.textContent = data.items[i].original_title;
           //Image
           countDownImage.setAttribute(
             "src",
             "https://image.tmdb.org/t/p/w500" + data.items[i].poster_path
           );
+
+          $(countDownImage).on("click", function (event) {
+            var filmTitle = $(event.target).next().text();
+            console.log(filmTitle);
+            getApi(filmTitle);
+          });
 
           counter++;
         }
