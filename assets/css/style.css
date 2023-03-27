@@ -94,6 +94,17 @@ body li a {
   background-color: var(--marvelites);
 }
 
+.btn {
+  font-weight: bold;
+  color: var(--marvelites);
+  background-color: var(--dark);
+}
+
+.btn2 {
+  color: var(--dark);
+  background-color: var(--marvelites);
+}
+
 .input-field {
   width: 100%;
 }
