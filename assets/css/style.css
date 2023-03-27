@@ -38,6 +38,27 @@ body li a {
   overflow: hidden;
 }
 
+/* Styling of the comics cards in hero-search */
+.comics-card {
+  background-color: var(--marvelites);
+}
+.comics-card img {
+  margin-top: 18px;
+  height: 200px;
+  object-fit:contain
+}
+
+.comics-card .card-content {
+  height: 150px;
+  display: flex;
+}
+
+.card .card-content .card-title {
+  font-size: 18px;
+  line-height: 24px;
+  justify-content: end;
+}
+
 /* Setting the standard size of the search-tiles and filling them completely with an image */
 .search-tile img {
   height: 145px;
@@ -112,10 +133,6 @@ body li a {
 }
 
 
-.test-card {
-  width: 60%;
-  margin: 0 auto;
-}
 
 /* MEDIA QUERIES */
 

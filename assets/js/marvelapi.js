@@ -58,7 +58,7 @@ function getApi() {
             var div1 = $("<div>");
             div1.addClass("col l3 m4 s6");
             var div2 = $("<div>");
-            div2.addClass("card");
+            div2.addClass("card comics-card");
             var div3 = $("<div>");
             div3.addClass("card-image waves-effect waves-block waves-light");
             var comicImage = $("<img>");
