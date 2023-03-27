@@ -6,8 +6,15 @@
   --marvelites: #F9D8C8;
 }
 
+/* ADGUSTING STYLING OF NAV BAR*/
 nav {
   background-color: var(--marvelites);
+  font-weight: bold;
+  word-spacing: 3px;
+}
+
+body {
+  background-color: var(--dark);
 }
 
 body li a { 
@@ -19,7 +26,7 @@ body li a {
 }
 
 .img{
-  height: 60px;
+  height: 55px;
   width: auto;
 }
 
@@ -90,9 +97,33 @@ body li a {
 }
 
 /* STYLING OF THE SEARCH-BOX */
+.search-box {
+  background-color: var(--marvelites);
+}
+
 .search-box label {
   font-size: 16px;
-  color: black;
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.card {
+  background-color: var(--marvelites);
+}
+
+#favourites {
+  background-color: var(--marvelites);
+}
+
+.btn {
+  font-weight: bold;
+  color: var(--marvelites);
+  background-color: var(--dark);
+}
+
+.btn2 {
+  color: var(--dark);
+  background-color: var(--marvelites);
 }
 
 .input-field {
@@ -103,16 +134,20 @@ body li a {
   box-shadow: none;
 }
 
+.tiles-card h5 {
+  color: var(--dark);
+  font-weight: bold;
+}
+
 /* Adjusting carousel images */
 .carousel {
-    background-color: var(--coral);
-    color: var(--dark);
+    background-color: var(--dark);
     min-height: 750px;
 }
 
 .carousel img {
     height: 100%;
-    object-fit:contain
+    object-fit: fill;
 }
 .carousel-item h4 {
     position:absolute;
@@ -123,6 +158,13 @@ body li a {
     font-family: 'Oswald', sans-serif;
 }
 
+.carousel-slider a {
+  background-color: var(--marvelites);
+}
+
+.carousel-slider h2 {
+  color: var(--dark);
+}
 
 #result-page {
   display: none;
