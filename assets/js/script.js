@@ -11,6 +11,83 @@ $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
 });
 
+//global variables (used for carousel)
+var movieContent = document.querySelector(".card-content");
+var carouselItem = document.querySelector(".carousel-item");
+//moviedb API
+var APIKey = "k_42i4oflg";
+
+// Movie countdown carousel
+// Checking release date of movie is in the future
+function isDateInFuture(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  return date.getTime() > now.getTime();
+}
+
+function getMovies(futureMovieArray) {
+  var APIURL =
+    "https://api.themoviedb.org/3/list/140624?api_key=d9c490609e2985e864fc511399c550ca&language=en-US";
+  fetch(APIURL)
+    .then(function (repsonse) {
+      return repsonse.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+      let counter = 0;
+      for (var i = 0; i < data.items.length && counter < 8; i++) {
+        if (isDateInFuture(data.items[i].release_date + "T12:00:00.000Z")) {
+          var title = document.querySelector(".title" + (counter + 1));
+          var timerHeading = document.querySelector(".timer" + (counter + 1));
+          var countDownImage = document.querySelector(".image" + (counter + 1));
+          var countDownTimer = new Date(data.items[i].release_date);
+
+          // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the difference between now and the count down date
+          var timeUntilNextRelease = countDownTimer - now;
+
+          var days = Math.floor(timeUntilNextRelease / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (timeUntilNextRelease % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor(
+            (timeUntilNextRelease % (1000 * 60 * 60)) / (1000 * 60)
+          );
+
+          var seconds = Math.floor((timeUntilNextRelease % (1000 * 60)) / 1000);
+
+          //Timer
+          timerHeading.textContent =
+            "Next Marvel Film Release: " +
+            days +
+            "d " +
+            hours +
+            "h " +
+            minutes +
+            "m " +
+            seconds +
+            "s ";
+          // to do - resolve set interval erroes and get time to update
+          console.log(timerHeading);
+          //Title
+          title.textContent = "Title: " + data.items[i].original_title;
+          //Image
+          countDownImage.setAttribute(
+            "src",
+            "https://image.tmdb.org/t/p/w500" + data.items[i].poster_path
+          );
+
+          counter++;
+        }
+      }
+    });
+}
+
+getMovies();
+
 // JavaScript for dropdown search options.
 var instances;
 document.addEventListener("DOMContentLoaded", function () {
