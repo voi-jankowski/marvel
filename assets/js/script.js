@@ -45,31 +45,13 @@ function getMovies(futureMovieArray) {
 
           // Get today's date and time
           var now = new Date().getTime();
+          console.log(now);
 
           // Find the difference between now and the count down date
           var timeUntilNextRelease = countDownTimer - now;
+          setCountdown(timeUntilNextRelease, timerHeading);
+          console.log(timeUntilNextRelease);
 
-          var days = Math.floor(timeUntilNextRelease / (1000 * 60 * 60 * 24));
-          var hours = Math.floor(
-            (timeUntilNextRelease % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          var minutes = Math.floor(
-            (timeUntilNextRelease % (1000 * 60 * 60)) / (1000 * 60)
-          );
-
-          var seconds = Math.floor((timeUntilNextRelease % (1000 * 60)) / 1000);
-
-          //Timer
-          timerHeading.textContent =
-            "Next Marvel Film Release: " +
-            days +
-            "d " +
-            hours +
-            "h " +
-            minutes +
-            "m " +
-            seconds +
-            "s ";
           // to do - resolve set interval erroes and get time to update
           console.log(timerHeading);
           //Title
@@ -84,6 +66,36 @@ function getMovies(futureMovieArray) {
         }
       }
     });
+}
+
+// Created the function outside the getMovies function to set the interval for the countdown clock.
+function setCountdown(timeUntilNextRelease, timerHeading) {
+  setInterval(function () {
+    var days = Math.floor(timeUntilNextRelease / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (timeUntilNextRelease % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor(
+      (timeUntilNextRelease % (1000 * 60 * 60)) / (1000 * 60)
+    );
+
+    var seconds = Math.floor((timeUntilNextRelease % (1000 * 60)) / 1000);
+
+    //Timer
+
+    timerHeading.textContent =
+      "Next Marvel Film Release: " +
+      days +
+      "d " +
+      hours +
+      "h " +
+      minutes +
+      "m " +
+      seconds +
+      "s ";
+
+    timeUntilNextRelease -= 1000;
+  }, 1000);
 }
 
 getMovies();
