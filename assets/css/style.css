@@ -9,14 +9,14 @@
 /* ADGUSTING STYLING OF NAV BAR*/
 nav {
   background-color: var(--marvelites);
-  background-image: url(/assets/images/Comic_Book_Texture.png);
+  background-image: url(../images/Comic_Book_Texture.png);
   font-weight: bold;
   word-spacing: 3px;
 }
 
 body {
   background-color: var(--dark);
-  background-image: url(/assets/images/Comic_Book_Texture.png);
+  background-image: url(../images/Comic_Book_Texture.png);
 }
 
 body li a {

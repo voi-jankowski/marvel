@@ -17,34 +17,31 @@ var heroResultPage = $("#hero-result-page");
 var ts = Date.now();
 var public_key = "01b22ec1bf1ed69b137633346d18cd93";
 var private_key = "ecbc9ce9c1a2d35a974c9e32d6126893492730f6";
-
 var hash = md5(ts + private_key + public_key);
 var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
-
-console.log(hash);
 
 function getHero(query) {
   var requestUrl =
     "http://gateway.marvel.com/v1/public/characters?name=" + query + "&" + parameter;
-  console.log(requestUrl);
 
   fetch(requestUrl)
     .then(function (response) {
-      console.log(response.status);
-      //  Conditional for the the response.status.
-      if (response.status !== 200) {
-        // Place the response.status on the page.
-      }
       return response.json();
     })
     .then(function (data) {
-      //Using console.log to examine the data
-      console.log(data);
 
       if (data.code !== 200) {
         errorStatus.css("display", "block");
+        heroResultPage.css("display", "none");
         statusCode.text("Error Status Code: " + data.code);
         statusMessage.text("Status: " + data.status);
+      }
+
+      if (data.data.count === 0) {
+        errorStatus.css("display", "block");
+        heroResultPage.css("display", "none");
+        statusCode.text("");
+        statusMessage.text("No Result found. Please enter a correct name.");
       }
 
       heroImage.attr(
@@ -64,11 +61,8 @@ function getHero(query) {
 
       var comicsItem = data.data.results[0].comics.items;
       for (var i = 0; i < comicsItem.length; i++) {
-        // console.log(comicsItem[i].name);
-        // console.log(comicsItem[i].resourceURI);
         var comicURI = comicsItem[i].resourceURI;
         var requestUrl2 = comicURI + "?" + parameter;
-        console.log(requestUrl2);
         fetch(requestUrl2)
           .then(function (response) {
             return response.json();
@@ -123,6 +117,7 @@ function getHero(query) {
             comicsItems.append(div1);
 
             heroResultPage.css("display", "block");
+            errorStatus.css("display", "none");
           });
       }
     });
@@ -134,14 +129,12 @@ heroResultPage.css("display", "none");
 heroNameBtn.on("click", function (event) {
   event.preventDefault();
   var name = heroName.val();
-  console.log(name);
   var queryArray = name.split(" ");
   var query = " ";
   for (let i = 0; i < queryArray.length; i++) {
     query += queryArray[i] + "%20";
   }
   query = query.slice(0, -3).trim();
-  console.log(query);
   heroName.val("");
 
   getHero(query);

@@ -33,7 +33,6 @@ function getMovies(futureMovieArray) {
       return repsonse.json();
     })
     .then(function (data) {
-      console.log(data);
 
       let counter = 0;
       for (var i = 0; i < data.items.length && counter < 8; i++) {
@@ -45,12 +44,10 @@ function getMovies(futureMovieArray) {
 
           // Get today's date and time
           var now = new Date().getTime();
-          console.log(now);
 
           // Find the difference between now and the count down date
           var timeUntilNextRelease = countDownTimer - now;
           setCountdown(timeUntilNextRelease, timerHeading);
-          console.log(timeUntilNextRelease);
 
           // to do - resolve set interval erroes and get time to update
           console.log(timerHeading);
@@ -226,7 +223,6 @@ function getApi(expression) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       var requestUrl2 =
         "https://imdb-api.com/en/API/Title/" +
@@ -234,31 +230,20 @@ function getApi(expression) {
         "/" +
         data.results[0].id +
         "/Trailer";
-      // console.log(requestUrl2);
 
       fetch(requestUrl2)
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
-          console.log(data);
-          console.log(data.title);
           resultTitle.text(data.title);
-          console.log(data.year);
           resultYear.text(data.year);
-          console.log(data.contentRating);
           resultRating.text(data.contentRating);
-          console.log(data.runtimeStr);
           resultRuntime.text(data.runtimeStr);
-          console.log(data.image);
           resultImage.attr("src", data.image);
-          console.log(data.trailer.linkEmbed);
           resultTrailer.attr("src", data.trailer.linkEmbed);
-          console.log(data.plot);
           resultPlot.text(data.plot);
-          console.log(data.directors);
           resultDirectors.text(data.directors);
-          console.log(data.stars);
           resultStars.text(data.stars);
 
           var newSearch = {
@@ -315,11 +300,7 @@ for (var j = 0; j < link.length; j++) {
 }
 
 function getVAl() {
-  // console.log(instances[0].getSelectedValues());
-  // window.location.href = 'results.html';
-  console.log(document.getElementById("movie-title").value);
   expression = $("#movie-title").val();
-  console.log(expression);
   getApi(expression);
 }
 
@@ -359,6 +340,5 @@ window.onload = function () {
 recentSearchesEL.on("click", function (event) {
   event.preventDefault();
   var cardTitle = $(event.target).text();
-  console.log(cardTitle);
   getApi(cardTitle);
 });
