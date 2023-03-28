@@ -64,20 +64,27 @@ body li a {
 
 .saved-title {
   visibility: hidden;
-}
-
-.card-image:hover .card-title {
-  visibility: visible;
-  opacity: 1;
-  font-size: inherit;
+  height: 145px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  padding: 0;
   font-weight: bold;
-  font-style: italic;
-  color: var(--coral);
+  color: var(--dark);
   cursor: pointer;
 }
 
+.card-image:hover .saved-title {
+  visibility: visible;
+  opacity: 1;
+ 
+}
+.card-image {
+  display: flex;
+}
+
 .card-image:hover .poster {
-  opacity: 0.25;
+  opacity: 0.2;
   transform: scale(1.2);
 }
 

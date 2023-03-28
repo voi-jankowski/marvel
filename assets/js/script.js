@@ -336,7 +336,7 @@ window.onload = function () {
       image.addClass("poster");
       image.attr("src", savedImage);
       var title = $("<p>");
-      title.addClass("card-title saved-title");
+      title.addClass("saved-title valign-wrapper center-align");
       title.text(savedTitle);
 
       div3.append(image);
