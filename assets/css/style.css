@@ -16,6 +16,7 @@ nav {
 
 body {
   background-color: var(--dark);
+  background-image: url(/assets/images/Comic_Book_Texture.png);
 }
 
 body li a {
@@ -35,6 +36,14 @@ body li a {
   background-color: var(--marvelites);
 }
 
+/* STYLING OF HERO_SEARCH */
+
+#hero-result-page h4 {
+  color: var(--marvelites);
+}
+#hero-result-page img {
+  padding: 0;
+}
 /* Styling of the comics cards in hero-search */
 
 .comics-card img {
