@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto:ital,wght@0,100;0,300;1,100&family=Tilt+Neon&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.cdnfonts.com/css/marvel" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Document</title>
@@ -14,11 +15,11 @@
 
 <body>
   <!-- Created navbar that is fixed on top and with dropdown menu on md or lower -->
-  <div class="navbar-fixed">
+  <div id="main-nav" class="navbar-fixed">
     <nav class="nav-extended">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo"><link><img class="img" src="assets/images/marvelites.png" alt="placeholder"></a>
+          <a href="index.html" class="brand-logo"><link><img class="img" src="./assets/images/Marvelites_Logo_Larger.png" alt="Marvel Logo"></a>
           <!-- Menu icon only appearing on mobiles and tablets. -->
           <a href="#" data-target="mobile-menu" class="dropdown-trigger hide-on-large-only"><i
               class="material-icons">menu</i></a>
@@ -41,16 +42,36 @@
     <li><a href="hero-search.html">Marvel Comics Character Search</a></li>
   </ul>
 
+  <div id="results-nav" class="navbar-fixed">
+    <nav class="nav-extended">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo"
+            ><link /><img
+              class="img"
+              src="assets/images/Marvelites_Logo_Larger.png"
+              alt="placeholder"
+          /></a>
+
+          <!-- Nav bar to the right  -->
+          <ul id="nav-mobile" class="right">
+            <li><a href="index.html">Back to the Main Page</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
   <div id="main-page" class="container">
     <div class="row">
       <div class="col l8 s12">
         <!-- Grey navigation panel -->
-        <div id="Next-Film" class="card red countdown-card">
+        <div id="Next-Film" class="card countdown-card">
           <div class="card-image waves-effect waves-block waves-light">
             <!-- Carousel of images for posters of new films coming up -->
             <div class="carousel carousel-slider">
               <a class="carousel-item white-text center" href="#one!">
-                <h2 class="timer1 center-align white-text"></h2>
+                <h2 id="Next-Film" class="timer1 center-align"></h2>
                 <img class="image1" alt="">
                 <h4 class="title1 center-align white-text"></h4>
               </a>
@@ -176,7 +197,7 @@
                   </select>
                   <label id="Search">Select a film</label>
                   <br>
-                  <button class="btn blue waves-effect waves-light" onclick="getVAl();">
+                  <button class="button1 btn waves-effect waves-light" onclick="getVAl();">
                     search
                   </button>
                 </div>
@@ -199,34 +220,38 @@
 
   <div id="result-page" class="container">
     <div class="card result-card">
-      <h5 id="result-title"></h5>
-      <p><span id="result-year"></span> · <span id="result-rating"></span> · <span id="result-runtime"></span></p>
-      <div class="row card-image">
-        <img id="result-image" class="col l4 s12" alt="" />
-        <div class="video-container responsive-video">
-          <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
+      <div class="card-content">
+        <h5 id="result-title"></h5>
+        <p><span id="result-year"></span> · <span id="result-rating"></span> · <span id="result-runtime"></span></p>
+        <div class="row card-image">
+          <img id="result-image" class="col l4 s12" alt="" />
+          <div class="video-container responsive-video">
+            <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
+        <table class="striped">
+          <tr>
+            <tbody>
+              <td><strong>Plot: </strong></td>
+              <td><span id="result-plot"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Directors: </strong></td>
+            <td><span id="result-directors"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Stars: </strong></td>
+            <td><span id="result-stars"></span></td>
+          </tr>
+          </tbody>
+  
+        </table>
       </div>
-      <table class="striped">
-        <tr>
-          <tbody>
-            <td><strong>Plot: </strong></td>
-            <td><span id="result-plot"></span></td>
-        </tr>
-        <tr>
-          <td><strong>Directors: </strong></td>
-          <td><span id="result-directors"></span></td>
-        </tr>
-        <tr>
-          <td><strong>Stars: </strong></td>
-          <td><span id="result-stars"></span></td>
-        </tr>
-        </tbody>
-
-      </table>
+      
+      
+      
     </div>
   </div>
-
 
 
   <!-- jQuery link for Materialize effects to work. -->

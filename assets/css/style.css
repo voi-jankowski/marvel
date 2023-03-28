@@ -3,14 +3,23 @@
   --peach: rgb(245, 206, 190);
   --coral: rgb(255, 107, 107);
   --grey: rgb(204, 209, 228);
-  --marvelites: #F9D8C8;
+  --marvelites: #f9d8c8;
 }
 
+/* ADGUSTING STYLING OF NAV BAR*/
 nav {
   background-color: var(--marvelites);
+  background-image: url(/assets/images/Comic_Book_Texture.png);
+  font-weight: bold;
+  word-spacing: 3px;
 }
 
-body li a { 
+body {
+  background-color: var(--dark);
+  background-image: url(/assets/images/Comic_Book_Texture.png);
+}
+
+body li a {
   color: var(--dark);
 }
 
@@ -18,8 +27,8 @@ body li a {
   color: var(--dark);
 }
 
-.img{
-  height: 60px;
+.img {
+  height: 55px;
   width: auto;
 }
 
@@ -27,17 +36,36 @@ body li a {
   background-color: var(--marvelites);
 }
 
-.card img {
-  /* // CONTROLS YOURS DESIRED CARD IMAGE HEIGHT */
-  height: 500px;
-  /* // NO MATTER WHAT IMAGE HEIGHT IT WILL SCALE WELL WITHIN THE HEIGHT */
-  object-fit: fill;
+/* STYLING OF HERO_SEARCH */
+
+#hero-result-page h4 {
+  color: var(--marvelites);
 }
-.card card-content {
-  max-height: 50%;
-  overflow: hidden;
+#hero-result-page img {
+  padding: 0;
+}
+/* Styling of the comics cards in hero-search */
+
+.comics-card img {
+  margin-top: 18px;
+  /* height: 200px; */
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
 }
 
+.comics-card .card-content {
+  height: 150px;
+  display: flex;
+}
+
+.card .card-content .card-title {
+  font-size: 18px;
+  line-height: 24px;
+  justify-content: end;
+}
+
+/* RECENT SEARCH CARDS */
 /* Setting the standard size of the search-tiles and filling them completely with an image */
 .search-tile img {
   height: 145px;
@@ -46,19 +74,26 @@ body li a {
 
 .saved-title {
   visibility: hidden;
+  height: 145px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  font-weight: bold;
+  color: var(--dark);
+  cursor: pointer;
 }
 
-.card-image:hover .card-title {
+.card-image:hover .saved-title {
   visibility: visible;
   opacity: 1;
-  font-size: inherit;
-  font-weight: bold;
-  font-style: italic;
-  color: var(--coral);
+}
+.card-image {
+  display: flex;
 }
 
 .card-image:hover .poster {
-  opacity: 0.25;
+  opacity: 0.2;
   transform: scale(1.2);
 }
 
@@ -66,12 +101,45 @@ body li a {
   width: 100px;
   margin: auto;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 /* STYLING OF THE SEARCH-BOX */
+.search-box {
+  background-color: var(--marvelites);
+}
+
 .search-box label {
   font-size: 16px;
-  color: black;
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.card {
+  background-color: var(--marvelites);
+}
+
+#favourites {
+  background-color: var(--marvelites);
+}
+/* STYLING OF BUTTONS */
+.btn {
+  font-weight: bold;
+  color: var(--marvelites);
+  background-color: var(--dark);
+}
+
+.btn2 {
+  color: var(--dark);
+  background-color: var(--marvelites);
+}
+
+.btn:hover {
+  background-color: var(--coral);
+}
+
+.btn:focus {
+  background-color: var(--coral);
 }
 
 .input-field {
@@ -82,39 +150,48 @@ body li a {
   box-shadow: none;
 }
 
+.tiles-card h5 {
+  color: var(--dark);
+  font-weight: bold;
+}
+
 /* Adjusting carousel images */
 .carousel {
-    background-color: var(--coral);
-    color: var(--dark);
-    min-height: 750px;
+  background-color: var(--dark);
+  min-height: 750px;
 }
 
 .carousel img {
-    height: 100%;
-    object-fit:contain
+  height: 100%;
+  object-fit: fill;
 }
 .carousel-item h4 {
-    position:absolute;
-    top: 80px;
-    color: white;
-    font-size: 150%;
-    width: 100%;
-    font-family: 'Oswald', sans-serif;
+  position: absolute;
+  top: 80px;
+  color: white;
+  font-size: 150%;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
 }
 
+.carousel-slider a {
+  background-color: var(--marvelites);
+}
+
+.carousel-slider h2 {
+  color: var(--dark);
+}
 
 #result-page {
   display: none;
 }
 
-.video-container {
-  padding-bottom: 40%;
+#results-nav {
+  display: none;
 }
 
-
-.test-card {
-  width: 60%;
-  margin: 0 auto;
+.video-container {
+  padding-bottom: 40%;
 }
 
 /* MEDIA QUERIES */

@@ -17,6 +17,7 @@ var heroResultPage = $("#hero-result-page");
 var ts = Date.now();
 var public_key = "01b22ec1bf1ed69b137633346d18cd93";
 var private_key = "ecbc9ce9c1a2d35a974c9e32d6126893492730f6";
+
 var hash = md5(ts + private_key + public_key);
 var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
 
@@ -76,7 +77,7 @@ function getHero(query) {
             var div1 = $("<div>");
             div1.addClass("col l3 m4 s6");
             var div2 = $("<div>");
-            div2.addClass("card");
+            div2.addClass("card comics-card");
             var div3 = $("<div>");
             div3.addClass("card-image waves-effect waves-block waves-light");
             var comicImage = $("<img>");
