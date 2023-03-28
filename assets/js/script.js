@@ -64,8 +64,15 @@ function getMovies(futureMovieArray) {
 
           $(timerHeading).on("click", function (event) {
             var filmTitle = $(event.target)[0].innerText;
+
+            filmTitle = filmTitle.split("releasing")[0]
             console.log(filmTitle);
             getApi(filmTitle);
+
+            onMouseover="displayQuote();">
+            function displayQuote() {
+            countDownImage.value = "";
+}
           });
 
           counter++;
