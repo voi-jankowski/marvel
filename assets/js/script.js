@@ -201,6 +201,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // GLOBAL VARIABLES
 var mainPageEl = $("#main-page");
 var resultPageEl = $("#result-page");
+var mainNav = $("#main-nav");
+var resultsNav = $("#results-nav");
 var recentSearchesEL = $("#recent-searches");
 var resultTitle = $("#result-title");
 var resultYear = $("#result-year");
@@ -297,6 +299,8 @@ function getApi(expression) {
 
           mainPageEl.css("display", "none");
           resultPageEl.css("display", "block");
+          mainNav.css("display", "none");
+          resultsNav.css("display", "block");
         });
     });
 }

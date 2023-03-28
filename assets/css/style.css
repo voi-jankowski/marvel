@@ -177,6 +177,11 @@ body li a {
   display: none;
 }
 
+#results-nav{
+  display: none;
+}
+
+
 .video-container {
   padding-bottom: 40%;
 }
