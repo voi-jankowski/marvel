@@ -47,7 +47,9 @@ function getMovies(futureMovieArray) {
 
           // Find the difference between now and the count down date
           var timeUntilNextRelease = countDownTimer - now;
-          setCountdown(timeUntilNextRelease, timerHeading);
+
+          setCountdown(timeUntilNextRelease, timerHeading, data.items[i].original_title);
+
 
           // to do - resolve set interval erroes and get time to update
           console.log(timerHeading);
@@ -59,10 +61,17 @@ function getMovies(futureMovieArray) {
             "https://image.tmdb.org/t/p/w500" + data.items[i].poster_path
           );
 
-          $(countDownImage).on("click", function (event) {
-            var filmTitle = $(event.target).next().text();
+          $(timerHeading).on("click", function (event) {
+            var filmTitle = $(event.target)[0].innerText;
+
+            filmTitle = filmTitle.split("releasing")[0]
             console.log(filmTitle);
             getApi(filmTitle);
+
+            onMouseover="displayQuote();">
+            function displayQuote() {
+            countDownImage.value = "";
+}
           });
 
           counter++;
@@ -72,7 +81,7 @@ function getMovies(futureMovieArray) {
 }
 
 // Created the function outside the getMovies function to set the interval for the countdown clock.
-function setCountdown(timeUntilNextRelease, timerHeading) {
+function setCountdown(timeUntilNextRelease, timerHeading, titleValue) {
   setInterval(function () {
     var days = Math.floor(timeUntilNextRelease / (1000 * 60 * 60 * 24));
     var hours = Math.floor(
@@ -87,7 +96,7 @@ function setCountdown(timeUntilNextRelease, timerHeading) {
     //Timer
 
     timerHeading.textContent =
-      "Next Marvel Film Release: " +
+      titleValue + " releasing in: " +
       days +
       "d " +
       hours +
