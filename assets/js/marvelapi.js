@@ -9,8 +9,8 @@ var heroEvents = $("#hero-events");
 var comicsItems = $("#comics-items");
 
 var ts = Date.now();
-var public_key = "b1afdf67373bc4db632b9b0eef7c26b2";
-var private_key = "6c62bf011bbb7b98ee7aeff5d9a7f519a467a3d3";
+var public_key = "64f6c85cde17de96d5a4cc7669763653";
+var private_key = "1c3405817d294c972ad069b86dbd8f7fc9ee935d";
 var hash = md5(ts + private_key + public_key);
 var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
 
@@ -58,7 +58,7 @@ function getApi() {
             var div1 = $("<div>");
             div1.addClass("col l3 m4 s6");
             var div2 = $("<div>");
-            div2.addClass("card");
+            div2.addClass("card comics-card");
             var div3 = $("<div>");
             div3.addClass("card-image waves-effect waves-block waves-light");
             var comicImage = $("<img>");
