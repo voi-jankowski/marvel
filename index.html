@@ -200,31 +200,36 @@
 
   <div id="result-page" class="container">
     <div class="card result-card">
-      <h5 id="result-title"></h5>
-      <p><span id="result-year"></span> · <span id="result-rating"></span> · <span id="result-runtime"></span></p>
-      <div class="row card-image">
-        <img id="result-image" class="col l4 s12" alt="" />
-        <div class="video-container responsive-video">
-          <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
+      <div class="card-content">
+        <h5 id="result-title"></h5>
+        <p><span id="result-year"></span> · <span id="result-rating"></span> · <span id="result-runtime"></span></p>
+        <div class="row card-image">
+          <img id="result-image" class="col l4 s12" alt="" />
+          <div class="video-container responsive-video">
+            <iframe id="result-trailer" style="height: 500px;" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
+        <table class="striped">
+          <tr>
+            <tbody>
+              <td><strong>Plot: </strong></td>
+              <td><span id="result-plot"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Directors: </strong></td>
+            <td><span id="result-directors"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Stars: </strong></td>
+            <td><span id="result-stars"></span></td>
+          </tr>
+          </tbody>
+  
+        </table>
       </div>
-      <table class="striped">
-        <tr>
-          <tbody>
-            <td><strong>Plot: </strong></td>
-            <td><span id="result-plot"></span></td>
-        </tr>
-        <tr>
-          <td><strong>Directors: </strong></td>
-          <td><span id="result-directors"></span></td>
-        </tr>
-        <tr>
-          <td><strong>Stars: </strong></td>
-          <td><span id="result-stars"></span></td>
-        </tr>
-        </tbody>
-
-      </table>
+      
+      
+      
     </div>
   </div>
 
