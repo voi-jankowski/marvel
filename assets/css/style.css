@@ -9,7 +9,7 @@
 /* ADGUSTING STYLING OF NAV BAR*/
 nav {
   background-color: var(--marvelites);
-  background-image: url(/assets/images/nav-bar-comic-background.png);
+  background-image: url(/assets/images/Comic_Book_Texture.png);
   font-weight: bold;
   word-spacing: 3px;
 }
