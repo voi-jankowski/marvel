@@ -7,32 +7,50 @@ var heroSeries = $("#hero-series");
 var heroStories = $("#hero-stories");
 var heroEvents = $("#hero-events");
 var comicsItems = $("#comics-items");
+var heroName = $("#hero-name");
+var heroNameBtn = $("#hero-name-btn");
+var statusCode = $("#status-code");
+var statusMessage = $("#status-message");
+var errorStatus = $("#error-status");
+var heroResultPage = $("#hero-result-page");
 
 var ts = Date.now();
-var public_key = "b1afdf67373bc4db632b9b0eef7c26b2";
-var private_key = "6c62bf011bbb7b98ee7aeff5d9a7f519a467a3d3";
+var public_key = "01b22ec1bf1ed69b137633346d18cd93";
+var private_key = "ecbc9ce9c1a2d35a974c9e32d6126893492730f6";
 var hash = md5(ts + private_key + public_key);
 var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
 
 console.log(hash);
 
-function getApi() {
+function getHero(query) {
   var requestUrl =
-    "http://gateway.marvel.com/v1/public/characters?name=Hulk&" + parameter;
+    "http://gateway.marvel.com/v1/public/characters?name=" + query + "&" + parameter;
   console.log(requestUrl);
 
   fetch(requestUrl)
     .then(function (response) {
+      console.log(response.status);
+      //  Conditional for the the response.status.
+      if (response.status !== 200) {
+        // Place the response.status on the page.
+      }
       return response.json();
     })
     .then(function (data) {
       //Using console.log to examine the data
       console.log(data);
+
+      if (data.code !== 200) {
+        errorStatus.css("display", "block");
+        statusCode.text("Error Status Code: " + data.code);
+        statusMessage.text("Status: " + data.status);
+      }
+
       heroImage.attr(
         "src",
         data.data.results[0].thumbnail.path +
-          "." +
-          data.data.results[0].thumbnail.extension
+        "." +
+        data.data.results[0].thumbnail.extension
       );
       heroName.text(data.data.results[0].name);
       heroDescription.text(data.data.results[0].description);
@@ -65,8 +83,8 @@ function getApi() {
             comicImage.attr(
               "src",
               data.data.results[0].thumbnail.path +
-                "." +
-                data.data.results[0].thumbnail.extension
+              "." +
+              data.data.results[0].thumbnail.extension
             );
             comicImage.addClass("activator");
 
@@ -102,9 +120,28 @@ function getApi() {
             div2.append(cardReveal);
             div1.append(div2);
             comicsItems.append(div1);
+
+            heroResultPage.css("display", "block");
           });
       }
     });
 }
 
-getApi();
+errorStatus.css("display", "none");
+heroResultPage.css("display", "none");
+
+heroNameBtn.on("click", function (event) {
+  event.preventDefault();
+  var name = heroName.val();
+  console.log(name);
+  var queryArray = name.split(" ");
+  var query = " ";
+  for (let i = 0; i < queryArray.length; i++) {
+    query += queryArray[i] + "%20";
+  }
+  query = query.slice(0, -3).trim();
+  console.log(query);
+  heroName.val("");
+
+  getHero(query);
+});
