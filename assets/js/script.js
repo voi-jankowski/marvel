@@ -49,8 +49,6 @@ function getMovies() {
             data.items[i].original_title
           );
 
-          // to do - resolve set interval erroes and get time to update
-          console.log(timerHeading);
           //Title
           title.textContent = data.items[i].original_title;
           //Image
@@ -63,7 +61,6 @@ function getMovies() {
             var filmTitle = $(event.target)[0].innerText;
 
             filmTitle = filmTitle.split("releasing")[0];
-            console.log(filmTitle);
             getApi(filmTitle);
 
             onMouseover =
@@ -236,7 +233,6 @@ const apiKey = "k_42i4oflg";
 function getApi(expression) {
   var requestUrl =
     "https://imdb-api.com/en/API/SearchMovie/" + apiKey + "/" + expression;
-  console.log(requestUrl);
   // First search with the value from getVal to get several film options for that search expression.
   fetch(requestUrl)
     .then(function (response) {
@@ -250,7 +246,6 @@ function getApi(expression) {
         "/" +
         data.results[0].id +
         "/Trailer";
-      console.log(requestUrl2);
       fetch(requestUrl2)
         .then(function (response) {
           return response.json();
