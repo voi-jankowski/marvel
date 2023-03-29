@@ -32,6 +32,8 @@ Jasmine Neal- [Jasmine's Github](https://github.com/Jvn101)
 
 Dominic Vickery- [Dom's Github](https://github.com/DominicVN)
 
+Voi Jankowski- [Voi's Github](https://github.com/voi-jankowski)
+
 Solution for the dropdown search was sourced at [Codepen](https://codepen.io/yassinevic/pen/eXjqjb)
 
 Framework used: Materialize v1.0.0 [Materialize Webpage](http://materializecss.com) Copyright 2014-2017 Materialize
