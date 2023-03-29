@@ -2,34 +2,41 @@
 
 ## Project Description
 
-Work Day Sceduler has been created to aid busy employees with their time management by storing importnat events organised in hour blocks.
+We saw the opportunity to use IMDb and Marvel API to build a centralized location which allows Marvel fans, our users, to read about any upcoming Marvel releases, explore projects that have already been released, and also to dig deeper into the comic book origins of their favourite Marvel characters, and discover how these characters cross-pollinate into other stories.
 
 ## Links
 
-Access the scheduler at [live page](https://voi-jankowski.github.io/work-day-scheduler/) And here you can find the code for this project: [GitHub](https://github.com/voi-jankowski/work-day-scheduler)
-
-## Installation
-
-N/A
+Have a look at our live page at [live page](https://voi-jankowski.github.io/marvel/) And here you can find the code for this project: [GitHub](https://github.com/voi-jankowski/marvel)
 
 ## Usage
 
-When you open the page you can see the date and time in the header. The clock is live and it updated every minute.
+Open the page and you can find the carousel with several upcoming films each with the countdown clock until its premiere. Scroll around and pick one that catches your eye and click it to get more info.
 
-![Opening of the page.](./assets/images/scheduler-1.png)
+![Opening of the page.](./assets/images/README-1.png)
 
-Below you can find the hour blocks of your daily scheduler. Click on the middle cell to enter your event and click save button next to it, to store it.
+On the right there is a search box, where you can select desired titles from the dropdown search. When you click SEARCH you will be presented with info on that film and its trailer.
 
-![Quiz in the game mode.](./assets/images/scheduler-2.png)
+![Search results.](./assets/images/README-2.png)
 
-When you reopen the page you can still view your saved events. You can edit your events by clicking on them and saving the changes by Save button.
+Select the link on the nav-bar for Marvel Comics Character Search to get more knowledge on the characters from the films and see what stories they were part of.
 
-![Page with the quiz finished.](./assets/images/scheduler-3.png)
-
+![Character search results.](./assets/images/README-3.png)
 
 ## Credits
 
-Coulor palette sourced from https://colorhunt.co/palette/ede9d5e7ab9adf7857617143
+The page was created by:
+
+Grethel Reyes- [Grethel's Github](https://github.com/Garethus)
+
+Jasmine Neal- [Jasmine's Github](https://github.com/Jvn101)
+
+Dominic Vickery- [Dom's Github](https://github.com/DominicVN)
+
+Solution for the dropdown search was sourced at [Codepen](https://codepen.io/yassinevic/pen/eXjqjb)
+
+Framework used: Materialize v1.0.0 [Materialize Webpage](http://materializecss.com) Copyright 2014-2017 Materialize
+
+MIT License [LICENSE](https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
 
 ## License
 
