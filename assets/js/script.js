@@ -1,14 +1,10 @@
+// CAROUSEL
+
 // Add function for the carousel.
 $(document).ready(function () {
   $(".carousel").carousel({
     indicators: true,
   });
-});
-
-// function to make mobile dropdown navbar work.
-
-$(document).ready(function () {
-  $(".dropdown-trigger").dropdown();
 });
 
 //global variables (used for carousel)
@@ -25,7 +21,7 @@ function isDateInFuture(dateString) {
   return date.getTime() > now.getTime();
 }
 
-function getMovies(futureMovieArray) {
+function getMovies() {
   var APIURL =
     "https://api.themoviedb.org/3/list/140624?api_key=d9c490609e2985e864fc511399c550ca&language=en-US";
   fetch(APIURL)
@@ -33,7 +29,6 @@ function getMovies(futureMovieArray) {
       return repsonse.json();
     })
     .then(function (data) {
-
       let counter = 0;
       for (var i = 0; i < data.items.length && counter < 8; i++) {
         if (isDateInFuture(data.items[i].release_date + "T12:00:00.000Z")) {
@@ -48,11 +43,12 @@ function getMovies(futureMovieArray) {
           // Find the difference between now and the count down date
           var timeUntilNextRelease = countDownTimer - now;
 
-          setCountdown(timeUntilNextRelease, timerHeading, data.items[i].original_title);
+          setCountdown(
+            timeUntilNextRelease,
+            timerHeading,
+            data.items[i].original_title
+          );
 
-
-          // to do - resolve set interval erroes and get time to update
-          console.log(timerHeading);
           //Title
           title.textContent = data.items[i].original_title;
           //Image
@@ -64,14 +60,14 @@ function getMovies(futureMovieArray) {
           $(timerHeading).on("click", function (event) {
             var filmTitle = $(event.target)[0].innerText;
 
-            filmTitle = filmTitle.split("releasing")[0]
-            console.log(filmTitle);
+            filmTitle = filmTitle.split("releasing")[0];
             getApi(filmTitle);
 
-            onMouseover="displayQuote();">
-            function displayQuote() {
-            countDownImage.value = "";
-}
+            onMouseover =
+              "displayQuote();" >
+              function displayQuote() {
+                countDownImage.value = "";
+              };
           });
 
           counter++;
@@ -96,7 +92,8 @@ function setCountdown(timeUntilNextRelease, timerHeading, titleValue) {
     //Timer
 
     timerHeading.textContent =
-      titleValue + " releasing in: " +
+      titleValue +
+      " releasing in: " +
       days +
       "d " +
       hours +
@@ -111,6 +108,14 @@ function setCountdown(timeUntilNextRelease, timerHeading, titleValue) {
 }
 
 getMovies();
+
+// DROPDOWN SEARCH BOX
+
+// function to make mobile dropdown navbar work.
+
+$(document).ready(function () {
+  $(".dropdown-trigger").dropdown();
+});
 
 // JavaScript for dropdown search options.
 var instances;
@@ -204,7 +209,9 @@ document.addEventListener("DOMContentLoaded", function () {
   instances = M.FormSelect.init(elems, options);
 });
 
-// GLOBAL VARIABLES
+// MOVIE SEARCH AND SEARCH RESULTS
+
+// global variables for movie search.
 var mainPageEl = $("#main-page");
 var resultPageEl = $("#result-page");
 var mainNav = $("#main-nav");
@@ -222,28 +229,28 @@ var resultStars = $("#result-stars");
 
 const apiKey = "k_42i4oflg";
 
+// main function for movie search with IMDb API.
 function getApi(expression) {
-  //   expression = "spiderman"; //sample search keyword only
   var requestUrl =
     "https://imdb-api.com/en/API/SearchMovie/" + apiKey + "/" + expression;
-
+  // First search with the value from getVal to get several film options for that search expression.
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
+    // then select one of the films from that option.
     .then(function (data) {
-
       var requestUrl2 =
         "https://imdb-api.com/en/API/Title/" +
         apiKey +
         "/" +
         data.results[0].id +
         "/Trailer";
-
       fetch(requestUrl2)
         .then(function (response) {
           return response.json();
         })
+        // displaying results of the search
         .then(function (data) {
           resultTitle.text(data.title);
           resultYear.text(data.year);
@@ -259,7 +266,7 @@ function getApi(expression) {
             title: data.title,
             image: data.image,
           };
-
+          // Save as recent search in the local storage
           var savedSearch =
             JSON.parse(localStorage.getItem("savedSearch")) || [];
 
@@ -290,7 +297,7 @@ function getApi(expression) {
             savedSearch.push(newSearch);
             localStorage.setItem("savedSearch", JSON.stringify(savedSearch));
           }
-
+          // hide the main body of the page and main navbar and display results page and results navbar.
           mainPageEl.css("display", "none");
           resultPageEl.css("display", "block");
           mainNav.css("display", "none");
@@ -299,15 +306,7 @@ function getApi(expression) {
     });
 }
 
-// When the result page is being displayed pressing the nav bar links takes you back to those elements being displayed and hides the result page.
-var link = document.querySelectorAll("a");
-for (var j = 0; j < link.length; j++) {
-  link[j].addEventListener("click", function (event) {
-    mainPageEl.css("display", "block");
-    resultPageEl.css("display", "none");
-  });
-}
-
+// Function to fethch the value from the dropdown search and pass it to getApi function.
 function getVAl() {
   expression = $("#movie-title").val();
   getApi(expression);
@@ -346,6 +345,7 @@ window.onload = function () {
   }
 };
 
+// add event listener to the recest searches tiles to get info on those films.
 recentSearchesEL.on("click", function (event) {
   event.preventDefault();
   var cardTitle = $(event.target).text();

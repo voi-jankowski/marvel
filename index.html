@@ -45,7 +45,7 @@
     <li><a href="#Next-Film">Next-Film</a></li>
     <li><a href="hero-search.html">Marvel Comics Character Search</a></li>
   </ul>
-
+  <!-- Created a separate navbar for the search results display -->
   <div id="results-nav" class="navbar-fixed">
     <nav class="nav-extended">
       <div class="container">
@@ -54,7 +54,7 @@
             <link /><img class="img" src="assets/images/Marvelites_Logo_Larger.png" alt="placeholder" />
           </a>
 
-          <!-- Nav bar to the right  -->
+          <!-- Nav bar to the right with only one link to go back to the start version of the  page. -->
           <ul id="nav-mobile" class="right">
             <li><a href="index.html">Back to the Main Page</a></li>
           </ul>
@@ -198,6 +198,7 @@
                   </select>
                   <label id="Search">Select a film</label>
                   <br>
+                  <!-- Search button click takes user to getVal function that triggers getApi function -->
                   <button class="button1 btn waves-effect waves-light" onclick="getVAl();">
                     search
                   </button>
@@ -218,7 +219,7 @@
       </div>
     </div>
   </div>
-
+  <!-- Result page hidden from view until the results are being displayed. -->
   <div id="result-page" class="container">
     <div class="card result-card">
       <div class="card-content">
