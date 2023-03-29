@@ -88,9 +88,9 @@ body li a {
   visibility: visible;
   opacity: 1;
 }
-.card-image {
+/* .card-image {
   display: flex;
-}
+} */
 
 .card-image:hover .poster {
   opacity: 0.2;
@@ -109,7 +109,7 @@ body li a {
   background-color: var(--marvelites);
 }
 
-.search-box label {
+.search-box label, .movie-search {
   font-size: 16px;
   color: var(--dark);
   font-weight: bold;
@@ -150,7 +150,7 @@ body li a {
   box-shadow: none;
 }
 
-.tiles-card h5 {
+.tiles-card h6 {
   color: var(--dark);
   font-weight: bold;
 }
