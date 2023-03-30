@@ -25,7 +25,10 @@ var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
 //Function for API call
 function getHero(query) {
   var requestUrl =
-    "http://gateway.marvel.com/v1/public/characters?name=" + query + "&" + parameter;
+    "https://gateway.marvel.com/v1/public/characters?name=" +
+    query +
+    "&" +
+    parameter;
 
   fetch(requestUrl)
     .then(function (response) {
@@ -50,8 +53,8 @@ function getHero(query) {
       heroImage.attr(
         "src",
         data.data.results[0].thumbnail.path +
-        "." +
-        data.data.results[0].thumbnail.extension
+          "." +
+          data.data.results[0].thumbnail.extension
       );
       heroName.text(data.data.results[0].name);
       heroDescription.text(data.data.results[0].description);
@@ -81,8 +84,8 @@ function getHero(query) {
             comicImage.attr(
               "src",
               data.data.results[0].thumbnail.path +
-              "." +
-              data.data.results[0].thumbnail.extension
+                "." +
+                data.data.results[0].thumbnail.extension
             );
             comicImage.addClass("activator");
             var comicDetails = $("<div>");
