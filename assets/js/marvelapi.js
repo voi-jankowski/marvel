@@ -50,9 +50,13 @@ function getHero(query) {
         statusMessage.text("No Result found. Please enter a correct name.");
       }
       //Processing API call response to display in the page
+      var imageURLRaw = data.data.results[0].thumbnail.path;
+      var imageURL1 = imageURLRaw.slice(0, 4);
+      var imageURL2 = imageURLRaw.slice(4);
+      var imageURL = imageURL1 + "s" + imageURL2;
       heroImage.attr(
         "src",
-        data.data.results[0].thumbnail.path +
+        imageURL +
           "." +
           data.data.results[0].thumbnail.extension
       );
@@ -81,9 +85,14 @@ function getHero(query) {
             var div3 = $("<div>");
             div3.addClass("card-image waves-effect waves-block waves-light");
             var comicImage = $("<img>");
+
+            var comicURLRaw = data.data.results[0].thumbnail.path;
+            var comicURL1 = comicURLRaw.slice(0, 4);
+            var comicURL2 = comicURLRaw.slice(4);
+            var comicURL = comicURL1 + "s" + comicURL2;
             comicImage.attr(
               "src",
-              data.data.results[0].thumbnail.path +
+              comicURL +
                 "." +
                 data.data.results[0].thumbnail.extension
             );
