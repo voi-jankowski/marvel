@@ -71,7 +71,10 @@ function getHero(query) {
 
       var comicsItem = data.data.results[0].comics.items;
       for (var i = 0; i < comicsItem.length; i++) {
-        var comicURI = comicsItem[i].resourceURI;
+        var comicURIRaw = comicsItem[i].resourceURI;
+        var comicURI1 = comicURIRaw.slice(0, 4);
+        var comicURI2 = comicURIRaw.slice(4);
+        var comicURI = comicURI1 + "s" + comicURI2;
         var requestUrl2 = comicURI + "?" + parameter;
         fetch(requestUrl2)
           .then(function (response) {
