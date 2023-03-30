@@ -38,35 +38,27 @@
       </nav>
     </div>
 
+    <!-- Input form for character name to be search -->
     <div class="container">
       <form action="">
         <div class="row">
           <div class="input-field col s6">
-            <input
-              placeholder="(Ex. Hulk, Iron Man, Thor, etc...)"
-              id="hero-name"
-              type="text"
-              class="validate"
-            />
-            <label for="hero-name">Marvel Comics Character Seach</label>
-            <button
-              id="hero-name-btn"
-              class="btn waves-effect waves-light"
-              type="submit"
-              name="action"
-            >
-              Search
-            </button>
+            <input placeholder="(Ex. Hulk, Iron Man, Thor, etc...)" id="hero-name" type="text" class="validate"
+              style="padding-top: 10px;" />
+            <label for="hero-name" style="font-size: 150%; font-weight: bold;">Marvel Comics Character Seach</label>
+            <button id="hero-name-btn" class="btn waves-effect waves-light" type="submit" name="action">Search</button>
           </div>
         </div>
       </form>
     </div>
 
+    <!-- Display for unsuccessful API call -->
     <div id="error-status" class="container">
       <h6 id="status-code" class="red-text"></h6>
       <h6 id="status-message" class="red-text"></h6>
     </div>
 
+    <!-- Display for character search result -->
     <div id="hero-result-page" class="container">
       <h4>Character</h4>
       <div class="card result-card">

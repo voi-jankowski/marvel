@@ -1,3 +1,4 @@
+//Global variable
 var heroImage = $("#hero-image");
 var heroCharacter = $("#hero-character");
 var heroName = $("#hero-name");
@@ -14,12 +15,14 @@ var statusMessage = $("#status-message");
 var errorStatus = $("#error-status");
 var heroResultPage = $("#hero-result-page");
 
+//Parameters for Marvel API
 var ts = Date.now();
 var public_key = "01b22ec1bf1ed69b137633346d18cd93";
 var private_key = "ecbc9ce9c1a2d35a974c9e32d6126893492730f6";
 var hash = md5(ts + private_key + public_key);
 var parameter = "ts=" + ts + "&apikey=" + public_key + "&hash=" + hash;
 
+//Function for API call
 function getHero(query) {
   var requestUrl =
     "http://gateway.marvel.com/v1/public/characters?name=" + query + "&" + parameter;
@@ -29,21 +32,21 @@ function getHero(query) {
       return response.json();
     })
     .then(function (data) {
-
+      //Code and status display if API call is not successful
       if (data.code !== 200) {
         errorStatus.css("display", "block");
         heroResultPage.css("display", "none");
         statusCode.text("Error Status Code: " + data.code);
         statusMessage.text("Status: " + data.status);
       }
-
+      //Code and status display if API call is successful but no data
       if (data.data.count === 0) {
         errorStatus.css("display", "block");
         heroResultPage.css("display", "none");
         statusCode.text("");
         statusMessage.text("No Result found. Please enter a correct name.");
       }
-
+      //Processing API call response to display in the page
       heroImage.attr(
         "src",
         data.data.results[0].thumbnail.path +
@@ -82,7 +85,6 @@ function getHero(query) {
               data.data.results[0].thumbnail.extension
             );
             comicImage.addClass("activator");
-
             var comicDetails = $("<div>");
             comicDetails.addClass("card-content");
             var comicTitle = $("<span>");
@@ -91,7 +93,6 @@ function getHero(query) {
             var i1 = $("<i>");
             i1.addClass("material-icons right");
             i1.text("more_vert");
-
             var cardReveal = $("<div>");
             cardReveal.addClass("card-reveal");
             var span2 = $("<span>");
@@ -115,17 +116,16 @@ function getHero(query) {
             div2.append(cardReveal);
             div1.append(div2);
             comicsItems.append(div1);
-
             heroResultPage.css("display", "block");
             errorStatus.css("display", "none");
           });
       }
     });
 }
-
 errorStatus.css("display", "none");
 heroResultPage.css("display", "none");
 
+//Eventlistener for hero name search click
 heroNameBtn.on("click", function (event) {
   event.preventDefault();
   var name = heroName.val();
@@ -136,6 +136,5 @@ heroNameBtn.on("click", function (event) {
   }
   query = query.slice(0, -3).trim();
   heroName.val("");
-
   getHero(query);
 });
